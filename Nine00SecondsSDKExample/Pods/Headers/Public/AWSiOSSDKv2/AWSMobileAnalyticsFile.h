@@ -1,0 +1,1 @@
+../../../AWSiOSSDKv2/AWSCore/MobileAnalytics/include/core/system/AWSMobileAnalyticsFile.h

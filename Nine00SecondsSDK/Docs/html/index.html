@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Nine00SecondsSDK Reference</title>
+		<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="index.html">Nine00SecondsSDK </a></h1>
+				<a id="developerHome" href="index.html">DENIVIP</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">Nine00SecondsSDK Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<div id="overview_contents" role="main">
+				<div class="main-navigation navigation-top">
+					<a href="hierarchy.html">Next</a>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">Nine00SecondsSDK Reference</h1>
+					</div>		
+				</div>
+				<div id="container">
+					
+					<div class="section section-overview index-overview">
+						
+						
+						<h1>How to install Nine00SecondsSDK library to your project and set dependencies</h1>
+
+<p><em>Nine00SecondsSDK</em> uses several third-party libraries in its work. In order to use it in your project you will need to add those libraries too.
+These are steps to set all required dependecies:</p>
+
+<ol>
+<li><p><em>Nine00SecondsSDK</em> requires following list of libraries</p>
+
+<ul>
+<li>AFNetworking (<a href="https://github.com/AFNetworking/AFNetworking" title="Link to the project on GitHub">github</a>)</li>
+<li>AWSiOSSDKv2/S3 (v2.0.8) (<a href="https://github.com/aws/aws-sdk-ios" title="Link to the project on GitHub">github</a>)</li>
+<li>CocoaLumberjack (<a href="https://github.com/CocoaLumberjack/CocoaLumberjack" title="Link to the project on GitHub">github</a>)</li>
+<li>THObserversAndBinders (<a href="https://github.com/th-in-gs/THObserversAndBinders" title="Link to the project on GitHub">github</a>)</li>
+<li>ffmpeg (<a href="https://github.com/FFmpeg/FFmpeg" title="Link to the project on GitHub">github</a>) - only requires .a static libraries avcodec.a, avdevice.a, avformat.a, avutil.a</li>
+<li>libextobjc (<a href="git@github.com:jspahrsummers/libextobjc.git" title="Link to the project on GitHub">github</a>)</li>
+</ul>
+
+
+<p>Some of the listed libraries (like AWSiOSSDKv2/S3) have their own requirements that have to be set too. Alternatively you can add these listed dependencies using the CocoaPods. It will automatically add all required libraries and frameworks.</p>
+
+<p>If you want to be able to run you project on simulator then you also have to add iconv system library to it:</p>
+
+<ul>
+<li>libiconv.dylib</li>
+</ul>
+
+
+<p>Simply add it in project settings inside &ldquo;Link Frameworks and Libraries&rdquo; section.</p></li>
+<li><p>To add <em>Nine00SecondsSDK</em> to the project you need to add</p>
+
+<ul>
+<li>Nine00SecondsSDK.a library. It is compiled for both iPhone and iPhone Simulator architectures. So it can be used for both.</li>
+<li>All NHS-prefixed header files that comes with it</li>
+</ul>
+</li>
+<li><p>To use the SDK classes you need to import <em>Nine00SecondsSDK.h</em> file:</p>
+
+<pre><code>#import "Nine00SecondsSDK.h"
+</code></pre>
+
+<p>Or you can add headers for specific classes that you want to use:</p>
+
+<pre><code>#import "NHSBroadcastManager.h"
+</code></pre></li>
+</ol>
+
+						
+						
+					</div>
+					
+                        
+                    
+					
+					
+					<div class="index-column">
+						<h2 class="index-title">Class References</h2>
+						<ul>
+							
+							<li><a href="Classes/NHSApplication.html">NHSApplication</a></li>
+							
+							<li><a href="Classes/NHSBroadcastManager.html">NHSBroadcastManager</a></li>
+							
+							<li><a href="Classes/NHSCapturePreviewView.html">NHSCapturePreviewView</a></li>
+							
+							<li><a href="Classes/NHSStream.html">NHSStream</a></li>
+							
+							<li><a href="Classes/NHSStreamPlayerController.html">NHSStreamPlayerController</a></li>
+							
+							<li><a href="Classes/NHSStreamPlayerViewController.html">NHSStreamPlayerViewController</a></li>
+							
+							<li><a href="Classes/NHSViewer.html">NHSViewer</a></li>
+							
+						</ul>
+					</div>
+					
+					
+						
+					<div class="index-column">
+						
+						<h2 class="index-title">Protocol References</h2>
+						<ul>
+							
+							<li><a href="Protocols/NHSBroadcastManagerDelegate.html">NHSBroadcastManagerDelegate</a></li>
+							
+						</ul>
+						
+                        
+						<h2 class="index-title">Constant References</h2>
+						<ul>
+                        
+                        <li><a href="Constants/NHSApplicationStorageType.html">NHSApplicationStorageType</a></li>
+                        
+						</ul>
+						
+                        
+                        <h2 class="index-title">Block References</h2>
+                        <ul>
+                        
+                        <li><a href="Blocks/NHSBroadcastCreateCompletion.html">NHSBroadcastCreateCompletion</a></li>
+                        
+                        <li><a href="Blocks/NHSBroadcastFetchCompletion.html">NHSBroadcastFetchCompletion</a></li>
+                        
+                        </ul>
+                        
+						
+					</div>
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<a href="hierarchy.html">Next</a>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 DENIVIP. All rights reserved. (Last updated: 2015-02-01)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+	
+					</div>
+				</div>
+			</div>
+		</article>		
+	</body>
+</html>

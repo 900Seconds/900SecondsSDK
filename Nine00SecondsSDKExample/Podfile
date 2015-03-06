@@ -1,0 +1,6 @@
+platform :ios, 7.0
+pod "CocoaLumberjack"
+pod "THObserversAndBinders", :head
+pod "AFNetworking", "~> 2.0"
+pod "AWSiOSSDKv2/S3", "2.0.8"
+pod "kingpin", :git => 'https://github.com/denivip/kingpin.git', :branch => 'denivip'

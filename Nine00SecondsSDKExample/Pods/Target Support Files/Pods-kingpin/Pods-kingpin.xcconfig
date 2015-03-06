@@ -1,0 +1,1 @@
+PODS_KINGPIN_OTHER_LDFLAGS = -framework "CoreLocation" -framework "MapKit"

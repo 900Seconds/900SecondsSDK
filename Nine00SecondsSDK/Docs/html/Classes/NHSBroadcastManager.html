@@ -1,0 +1,1318 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NHSBroadcastManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Nine00SecondsSDK </a></h1>
+				<a id="developerHome" href="../index.html">DENIVIP</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NHSBroadcastManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/currentStreamBytesSent">&nbsp;&nbsp;&nbsp;&nbsp;currentStreamBytesSent</option>
+	
+	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
+	
+	<option value="//api/name/previewView">&nbsp;&nbsp;&nbsp;&nbsp;previewView</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/registerAppID:withSecret:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerAppID:withSecret:withCompletion:</option>
+	
+	<option value="//api/name/sharedManager">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedManager</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/broadcastingURLWithStream:">&nbsp;&nbsp;&nbsp;&nbsp;- broadcastingURLWithStream:</option>
+	
+	<option value="//api/name/fetchRecentStreamsWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- fetchRecentStreamsWithCompletion:</option>
+	
+	<option value="//api/name/fetchStreamsNearCoordinate:withRadius:sinceDate:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- fetchStreamsNearCoordinate:withRadius:sinceDate:withCompletion:</option>
+	
+	<option value="//api/name/removeStreamWithID:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- removeStreamWithID:completion:</option>
+	
+	<option value="//api/name/scheduleSavedUploads">&nbsp;&nbsp;&nbsp;&nbsp;- scheduleSavedUploads</option>
+	
+	<option value="//api/name/startBroadcasting">&nbsp;&nbsp;&nbsp;&nbsp;- startBroadcasting</option>
+	
+	<option value="//api/name/startPreview">&nbsp;&nbsp;&nbsp;&nbsp;- startPreview</option>
+	
+	<option value="//api/name/stopBroadcasting">&nbsp;&nbsp;&nbsp;&nbsp;- stopBroadcasting</option>
+	
+	<option value="//api/name/stopPreview">&nbsp;&nbsp;&nbsp;&nbsp;- stopPreview</option>
+	
+	<option value="//api/name/stopPreviewAsync">&nbsp;&nbsp;&nbsp;&nbsp;- stopPreviewAsync</option>
+	
+	<option value="//api/name/toggleCamera">&nbsp;&nbsp;&nbsp;&nbsp;- toggleCamera</option>
+	
+	<option value="//api/name/viewersForStream:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- viewersForStream:withCompletion:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Authenticating the application">Authenticating the application</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Maintaining the upload queue">Maintaining the upload queue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Recording the video">Recording the video</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Fetching broadcasts from server">Fetching broadcasts from server</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Playing broadcasts">Playing broadcasts</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentStreamBytesSent">currentStreamBytesSent</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/previewView">previewView</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerAppID:withSecret:withCompletion:">registerAppID:withSecret:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedManager">sharedManager</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/broadcastingURLWithStream:">broadcastingURLWithStream:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetchRecentStreamsWithCompletion:">fetchRecentStreamsWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetchStreamsNearCoordinate:withRadius:sinceDate:withCompletion:">fetchStreamsNearCoordinate:withRadius:sinceDate:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeStreamWithID:completion:">removeStreamWithID:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/scheduleSavedUploads">scheduleSavedUploads</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startBroadcasting">startBroadcasting</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startPreview">startPreview</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopBroadcasting">stopBroadcasting</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopPreview">stopPreview</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopPreviewAsync">stopPreviewAsync</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/toggleCamera">toggleCamera</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/viewersForStream:withCompletion:">viewersForStream:withCompletion:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NHSBroadcastManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NHSBroadcastManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">NHSBroadcastManager.h<br />NHSBroadcastManager.m</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>NHSBroadcastManager is a single object that manages whole lifecycle of a broadcast from creation to stopping and deletion. All the backend method&rsquo;s calls are performed with broadcast manager. Listing existing broadcasts are also performed with this object.
+Broadcast manager maintains the broadcasts video upload queue keeping it persistent when application is no longer active.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/previewView">&nbsp;&nbsp;previewView</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentStreamBytesSent">&nbsp;&nbsp;currentStreamBytesSent</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedManager">+&nbsp;sharedManager</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Authenticating the application" name="task_Authenticating the application"></a>
+						<h3 class="subsubtitle task-title">Authenticating the application</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerAppID:withSecret:withCompletion:">+&nbsp;registerAppID:withSecret:withCompletion:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Maintaining the upload queue" name="task_Maintaining the upload queue"></a>
+						<h3 class="subsubtitle task-title">Maintaining the upload queue</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/scheduleSavedUploads">&ndash;&nbsp;scheduleSavedUploads</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Recording the video" name="task_Recording the video"></a>
+						<h3 class="subsubtitle task-title">Recording the video</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startPreview">&ndash;&nbsp;startPreview</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/toggleCamera">&ndash;&nbsp;toggleCamera</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startBroadcasting">&ndash;&nbsp;startBroadcasting</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/viewersForStream:withCompletion:">&ndash;&nbsp;viewersForStream:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopBroadcasting">&ndash;&nbsp;stopBroadcasting</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopPreview">&ndash;&nbsp;stopPreview</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopPreviewAsync">&ndash;&nbsp;stopPreviewAsync</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Fetching broadcasts from server" name="task_Fetching broadcasts from server"></a>
+						<h3 class="subsubtitle task-title">Fetching broadcasts from server</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeStreamWithID:completion:">&ndash;&nbsp;removeStreamWithID:completion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetchRecentStreamsWithCompletion:">&ndash;&nbsp;fetchRecentStreamsWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetchStreamsNearCoordinate:withRadius:sinceDate:withCompletion:">&ndash;&nbsp;fetchStreamsNearCoordinate:withRadius:sinceDate:withCompletion:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Playing broadcasts" name="task_Playing broadcasts"></a>
+						<h3 class="subsubtitle task-title">Playing broadcasts</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/broadcastingURLWithStream:">&ndash;&nbsp;broadcastingURLWithStream:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/currentStreamBytesSent" title="currentStreamBytesSent"></a>
+	<h3 class="subsubtitle method-title">currentStreamBytesSent</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Amount of bytes sent by current broadcast.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) int64_t currentStreamBytesSent</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Amount of bytes sent by current broadcast.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="subsubtitle method-title">delegate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Broadcast manager delegate object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;NHSBroadcastManagerDelegate&gt; delegate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Broadcast manager delegate object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/previewView" title="previewView"></a>
+	<h3 class="subsubtitle method-title">previewView</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A preview view for capturing video from camera. Before starting recording video for broadcasting the developers have to add this view to current controller view hierarchy.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NHSCapturePreviewView *previewView</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A preview view for capturing video from camera. Before starting recording video for broadcasting the developers have to add this view to current controller view hierarchy.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/registerAppID:withSecret:withCompletion:" title="registerAppID:withSecret:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">registerAppID:withSecret:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The application that use this SDK need to be registered with it&rsquo;s application ID and secret key. In response server will grant it with credentials to file storage. This class method should be called every time when application starts in order for broadcast manager to be able to upload video chunks to file storage.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerAppID:(NSString *)<em>appID</em> withSecret:(NSString *)<em>secret</em> withCompletion:(void ( ^ ) ( NHSApplication *application , NSError *error ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appID</em></dt>
+			<dd><p>The ID of application that uses Nine00SecondsSDK.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>secret</em></dt>
+			<dd><p>The secret key obtained by developers after registering application.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>A completion to be called on server response. It contains <a href="../Classes/NHSApplication.html">NHSApplication</a> object which holds file storage credentials and NSError object that will contain information in case something went wrong. The <a href="../Classes/NHSApplication.html">NHSApplication</a> object is retained by broadcast manager so there is no need to save it somewhere else.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The application that use this SDK need to be registered with it&rsquo;s application ID and secret key. In response server will grant it with credentials to file storage. This class method should be called every time when application starts in order for broadcast manager to be able to upload video chunks to file storage.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedManager" title="sharedManager"></a>
+	<h3 class="subsubtitle method-title">sharedManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>NHSBroadcastManager is a singleton object which means it is created only once per application lifetime and then is always available. To get current broadcast manager object developers have to call this class method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)sharedManager</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Broadcast manager instance.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>NHSBroadcastManager is a singleton object which means it is created only once per application lifetime and then is always available. To get current broadcast manager object developers have to call this class method.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/broadcastingURLWithStream:" title="broadcastingURLWithStream:"></a>
+	<h3 class="subsubtitle method-title">broadcastingURLWithStream:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method returns a url to video broadcasting. This url can be used in any video player.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSURL *)broadcastingURLWithStream:(NHSStream *)<em>stream</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>stream</em></dt>
+			<dd><p><a href="../Classes/NHSStream.html">NHSStream</a> object that corresponds to broadcast.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSURL object containing a remote video url.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method returns a url to video broadcasting. This url can be used in any video player.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fetchRecentStreamsWithCompletion:" title="fetchRecentStreamsWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">fetchRecentStreamsWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fetching a list of broadcasts made with current application.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)fetchRecentStreamsWithCompletion:(NHSBroadcastFetchCompletion)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion has an array of <a href="../Classes/NHSStream.html">NHSStream</a> objects as returned broadcasts and NSError object with information about error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Fetching a list of broadcasts made with current application.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fetchStreamsNearCoordinate:withRadius:sinceDate:withCompletion:" title="fetchStreamsNearCoordinate:withRadius:sinceDate:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">fetchStreamsNearCoordinate:withRadius:sinceDate:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fetching a list of broadcasts filtered by coordinate, proximity and age.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (AFHTTPRequestOperation *)fetchStreamsNearCoordinate:(CLLocationCoordinate2D)<em>coordinate</em> withRadius:(CGFloat)<em>radiusInMeters</em> sinceDate:(NSDate *)<em>date</em> withCompletion:(NHSBroadcastFetchCompletion)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>A reference coordinate which has to be matched by broadcast&rsquo;s coordinates.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>radiusInMeters</em></dt>
+			<dd><p>A proximity radius for coordinate parameter. If broadcast&rsquo;s coordinates are happen inside the proximity radius - broadcast will be returned.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>date</em></dt>
+			<dd><p>Date after which broadcast have to be made in order to be returned by request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion will be called on server response and contains returned broadcasts array and an error instance.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Instance of fetch operation is returned by this method. Operation does not require manual start.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Fetching a list of broadcasts filtered by coordinate, proximity and age.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeStreamWithID:completion:" title="removeStreamWithID:completion:"></a>
+	<h3 class="subsubtitle method-title">removeStreamWithID:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Requires server side to remove a broadcast.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeStreamWithID:(NSString *)<em>streamID</em> completion:(void ( ^ ) ( NSError *error ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>streamID</em></dt>
+			<dd><p>An ID of the stream corresponding to broadcast.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion to be called on server respond. NSError object contains information about error, or will be nil if no error has happened.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Requires server side to remove a broadcast.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/scheduleSavedUploads" title="scheduleSavedUploads"></a>
+	<h3 class="subsubtitle method-title">scheduleSavedUploads</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method forces broadcast manager to start maintaining upload queue. Normally when <a href="#//api/name/startBroadcasting">startBroadcasting</a> method is called broadcast manager performs upload automatically so there is no need to call this method in this case.
+In order not to loose the upload when application goes to background broadcast manager saves the video upload queue to disk. When application is back to foreground queue will be loaded but won&rsquo;t automatically continue the upload process. Developers have to call this method to continue the upload.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)scheduleSavedUploads</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method forces broadcast manager to start maintaining upload queue. Normally when <a href="#//api/name/startBroadcasting">startBroadcasting</a> method is called broadcast manager performs upload automatically so there is no need to call this method in this case.
+In order not to loose the upload when application goes to background broadcast manager saves the video upload queue to disk. When application is back to foreground queue will be loaded but won&rsquo;t automatically continue the upload process. Developers have to call this method to continue the upload.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startBroadcasting" title="startBroadcasting"></a>
+	<h3 class="subsubtitle method-title">startBroadcasting</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method starts recording video to local temporary file and creates a request for creating a <a href="../Classes/NHSStream.html">NHSStream</a> object on server side. If server responds with success the broadcasting starts. If a stream fails to be created then no broadcasting will take place and appropriate <a href="#//api/name/delegate">delegate</a> method will be called. Broadcast manager will start uploading video to the file storage automatically. Also this method triggers the location updates which will be set as broadcast coordinates. This method will have no effect if preview is not started.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startBroadcasting</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method starts recording video to local temporary file and creates a request for creating a <a href="../Classes/NHSStream.html">NHSStream</a> object on server side. If server responds with success the broadcasting starts. If a stream fails to be created then no broadcasting will take place and appropriate <a href="#//api/name/delegate">delegate</a> method will be called. Broadcast manager will start uploading video to the file storage automatically. Also this method triggers the location updates which will be set as broadcast coordinates. This method will have no effect if preview is not started.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startPreview" title="startPreview"></a>
+	<h3 class="subsubtitle method-title">startPreview</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Call this method to start transmitting video data from camera to <a href="#//api/name/previewView">previewView</a>. The preview view must have a superview in order for this method to have effect. This method will arrange all resources required to start a recording and broadcasting.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startPreview</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Call this method to start transmitting video data from camera to <a href="#//api/name/previewView">previewView</a>. The preview view must have a superview in order for this method to have effect. This method will arrange all resources required to start a recording and broadcasting.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopBroadcasting" title="stopBroadcasting"></a>
+	<h3 class="subsubtitle method-title">stopBroadcasting</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Call this method to recording new frames to temporary video file. Afterwards the current stream will upload last chunks of video and will inform server that the corresponding broadcast is stopped. This method will have no effect if there is no recording session.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopBroadcasting</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Call this method to recording new frames to temporary video file. Afterwards the current stream will upload last chunks of video and will inform server that the corresponding broadcast is stopped. This method will have no effect if there is no recording session.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopPreview" title="stopPreview"></a>
+	<h3 class="subsubtitle method-title">stopPreview</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method stops video data to be transferred to preview view and removes it from superview. This method will have no effect if there is a broadcasting going.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopPreview</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method stops video data to be transferred to preview view and removes it from superview. This method will have no effect if there is a broadcasting going.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopPreviewAsync" title="stopPreviewAsync"></a>
+	<h3 class="subsubtitle method-title">stopPreviewAsync</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is identical to <a href="#//api/name/stopPreview">[NHSBroadcastManager stopPreview]</a> method but is will run asynchronously on background thread without blocking main queue.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopPreviewAsync</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method is identical to <a href="#//api/name/stopPreview">[NHSBroadcastManager stopPreview]</a> method but is will run asynchronously on background thread without blocking main queue.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/toggleCamera" title="toggleCamera"></a>
+	<h3 class="subsubtitle method-title">toggleCamera</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Call this method if you want to switch between front and back camera on the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)toggleCamera</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Call this method if you want to switch between front and back camera on the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/viewersForStream:withCompletion:" title="viewersForStream:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">viewersForStream:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method requests list of users currently watching specified stream. Response contains array of <a href="../Classes/NHSViewer.html">NHSViewer</a> objects and NSError.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)viewersForStream:(NHSStream *)<em>stream</em> withCompletion:(NHSBroadcastFetchCompletion)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>stream</em></dt>
+			<dd><p>A stream which ID will be used to request a viewers list.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>A completion to be called on server response.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method requests list of users currently watching specified stream. Response contains array of <a href="../Classes/NHSViewer.html">NHSViewer</a> objects and NSError.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+                    
+                    
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 DENIVIP. All rights reserved. (Last updated: 2015-02-01)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

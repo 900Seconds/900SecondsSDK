@@ -1,0 +1,1 @@
+../../../AWSiOSSDKv2/AWSCore/MobileAnalytics/AZCommon/ClientContext/AWSMobileAnalyticsIOSClientContext.h
