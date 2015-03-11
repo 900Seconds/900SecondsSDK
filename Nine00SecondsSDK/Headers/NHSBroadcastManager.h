@@ -48,6 +48,11 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSError *error);
 @property (nonatomic, readonly) int64_t currentStreamBytesSent;
 
 /**
+ Average bitrate of streaming video. Defaults to 440 kbps. Maximum value equals 8500 kbps. Recommended values for HLS bitrate described in [Bitrate recommendations](https://developer.apple.com/library/ios/technotes/tn2224/_index.html#//apple_ref/doc/uid/DTS40009745-CH1-BITRATERECOMMENDATIONS) and [Encoding settings](https://developer.apple.com/library/ios/technotes/tn2224/_index.html#//apple_ref/doc/uid/DTS40009745-CH1-SETTINGSFILES).
+ */
+@property (nonatomic, assign) NSUInteger averageBitrate;
+
+/**
  NHSBroadcastManager is a singleton object which means it is created only once per application lifetime and then is always available. To get current broadcast manager object developers have to call this class method.
  
  @return Broadcast manager instance.
