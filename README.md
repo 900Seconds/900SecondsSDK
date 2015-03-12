@@ -10,11 +10,11 @@ Some of the features the SDK handles:
 - video streams playback
 
 ## Quick start guide
-1. [Intallation](md_installation)
-2. [Documentation](md_documetation)
-3. [Basic usage](md_basic_usage)
+1. [Intallation](https://github.com/900Seconds/900SecondsSDK#installation)
+2. [Documentation](https://github.com/900Seconds/900SecondsSDK#documentation)
+3. [Basic usage](https://github.com/900Seconds/900SecondsSDK#basic-usage)
 
-### <a name="md_installation"></a>Installation ###
+### Installation ###
 900Seconds SDK uses several third-party libraries in its work. In order to use it in your project you will need to add those libraries too.
 These are steps to set all required dependecies:
 
@@ -46,10 +46,10 @@ These are steps to set all required dependecies:
 
        `#import "NHSBroadcastManager.h"`
 
-### <a name="md_documetation"></a>Documentation ###
+### Documentation ###
 You can find Apple-style [appledoc](https://github.com/tomaz/appledoc)-generated docs under *Nine00SecondsSDK/Docs/* subdirectory.
 
-### <a name="md_basic_usage"></a>Basic usage ###
+### Basic usage ###
 #### Autorizing the app
 
 ## Requirements
