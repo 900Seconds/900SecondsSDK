@@ -104,11 +104,20 @@ The first is to fetch streams with radius around some location point. To perform
 
 Fetch will request the backend for list of streams satisfying the parameters. When backend responds the completion will be called. Array of _NHSStream_ objects ordered by distance from coordinate are passed as _NSArray_ in the completion along with _NSError_ object. You can set _radius_ to 0 or _date_ to _nil_ to ignore those parameters, it will return all the streams made by this application.
 
-The second fetch option is to fetch last 30 streams made by this application. This method has no parameters except for completion:
+The second fetch option is to fetch last 30 streams made by specific author.
+```objective-c
+[[NHSBroadcastManager sharedInstance] fetchRecentStreamsOfAuthorWithID:(NSString *)authorID
+                                                            completion:(NHSBroadcastFetchCompletion)completion];
+```
+
+By default any _NHSStream_ object has authorID property set to some unique string generated on first app launch. So every stream has an identifier of an application on a particular device it was made with. Passing this identifier to this method will specify which user streams you want to fetch. If you pass _nil_ instead then backed will return last 30 streams made with this application regardless of author.
+
+To fetch streams made by current user you have to pass current application's authorID to this method. It can be obtained from _NSUserDefaults_ with the key _kNHSApplicationInstallationIdentifierKey_. Or you can use this convinience method instead:
 ```objective-c
 [[NHSBroadcastManager sharedInstance] fetchRecentStreamsWithCompletion:(NHSBroadcastFetchCompletion)completion];
 ```
-The completion is the same as in previous method and gets called on server response.
+
+This method will return streams made by current application and has no input arguments except completion.
 
 Also you can remove any particular stream by calling
 ```objective-c
