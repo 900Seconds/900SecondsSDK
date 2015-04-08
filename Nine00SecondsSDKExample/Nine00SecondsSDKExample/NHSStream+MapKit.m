@@ -1,5 +1,5 @@
 //
-//  DVGStream+MapKit.m
+//  NHSStream+MapKit.m
 //  NineHundredSeconds
 //
 //  Created by Nikolay Morev on 11.11.14.

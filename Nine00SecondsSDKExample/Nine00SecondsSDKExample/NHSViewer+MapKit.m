@@ -1,5 +1,5 @@
 //
-//  DVGViewer+MapKit.m
+//  NHSViewer+MapKit.m
 //  NineHundredSeconds
 //
 //  Created by Nikolay Morev on 17.12.14.
