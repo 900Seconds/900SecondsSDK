@@ -1,9 +1,9 @@
 //
 //  DVCapturePreviewView.h
-//  Together
+//  Nine00SecondsSDK
 //
-//  Created by Nikolay Morev on 6/26/12.
-//  Copyright (c) 2012 kolia@denivip.ru. All rights reserved.
+//  Created by Nikolay Morev on 25.11.14.
+//  Copyright (c) 2014 900 Seconds Oy. All rights reserved.
 //
 
 @import UIKit;

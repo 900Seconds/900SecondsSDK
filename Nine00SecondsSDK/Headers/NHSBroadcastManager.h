@@ -3,7 +3,7 @@
 //  Nine00SecondsSDK
 //
 //  Created by Mikhail Grushin on 18.12.14.
-//  Copyright (c) 2014 DENIVIP Group. All rights reserved.
+//  Copyright (c) 2014 900 Seconds Oy. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -28,8 +28,6 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSError *error);
 /**
  NHSBroadcastManager is a single object that manages whole lifecycle of a broadcast from creation to stopping and deletion. All the backend method's calls are performed with broadcast manager. Listing existing broadcasts are also performed with this object.
  Broadcast manager maintains the broadcasts video upload queue keeping it persistent when application is no longer active.
- 
- Implement NHSBroadcastManagerDelegate methods to be notified about video streaming events.
  */
 
 @interface NHSBroadcastManager : NSObject
@@ -98,8 +96,6 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSError *error);
 
 /**
  This method starts recording video to local temporary file and creates a request for creating a NHSStream object on server side. If server responds with success the broadcasting starts. If a stream fails to be created then no broadcasting will take place and appropriate delegate method will be called. Broadcast manager will start uploading video to the file storage automatically. Also this method triggers the location updates which will be set as broadcast coordinates. This method will have no effect if preview is not started.
- 
- When broadcasting have started the SDK starts using AVFoundation to write and compress video and ffmpeg to encode chunks of video as .ts files and then send them to the file storage. Currently all .ts files have a duration of 8 seconds. The upload process is going asynchrounously on background after each next chunk is created.
  */
 - (void)startBroadcasting;
 
@@ -138,27 +134,18 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSError *error);
                 completion:(void (^)(NSError *error))completion;
 
 /**
- Fetching a list of broadcasts made with current device.
+ Fetching a list of broadcasts made with current application.
  
  @param completion Completion has an array of NHSStream objects as returned broadcasts and NSError object with information about error.
  */
 - (void)fetchRecentStreamsWithCompletion:(NHSBroadcastFetchCompletion)completion;
 
 /**
- Fetching a list of broadcasts made by specific author.
- 
- @param authorID String argument which specifies ID of the application that authored fetched videos.
- @param completion Completion has an array of NHSStream objects as returned broadcasts and NSError object with information about error.
- */
-- (void)fetchRecentStreamsOfAuthorWithID:(NSString *)authorID
-                              completion:(NHSBroadcastFetchCompletion)completion;
-
-/**
  Fetching a list of broadcasts filtered by coordinate, proximity and age.
  
  @param coordinate A reference coordinate which has to be matched by broadcast's coordinates.
- @param radiusInMeters _Optional_. A proximity radius for coordinate parameter. If broadcast's coordinates are happen inside the proximity radius - broadcast will be returned. If radius is set to 0 then it's ignored and all streams will be returned.
- @param date _Optional_. Date after which broadcast have to be made in order to be returned by request. If date is set to nil then this parameter will be ignored.
+ @param radiusInMeters A proximity radius for coordinate parameter. If broadcast's coordinates are happen inside the proximity radius - broadcast will be returned.
+ @param date Date after which broadcast have to be made in order to be returned by request.
  @param completion Completion will be called on server response and contains returned broadcasts array and an error instance.
  @return Instance of fetch operation is returned by this method. Operation does not require manual start.
  */
