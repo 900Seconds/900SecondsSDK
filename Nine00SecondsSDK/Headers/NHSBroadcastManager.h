@@ -14,6 +14,36 @@
 @class NHSStream, NHSApplication, NHSBroadcastManager, AFHTTPRequestOperation;
 
 /**
+ These streaming options is used to set a quality of broadcasting video. Choosing one of presets you set the video's resolution and bitrate. Recommended values for HLS bitrate and resolutions described in [Bitrate recommendations](https://developer.apple.com/library/ios/technotes/tn2224/_index.html#//apple_ref/doc/uid/DTS40009745-CH1-BITRATERECOMMENDATIONS) and [Encoding settings](https://developer.apple.com/library/ios/technotes/tn2224/_index.html#//apple_ref/doc/uid/DTS40009745-CH1-SETTINGSFILES).
+ */
+typedef NS_ENUM(NSUInteger, NHSStreamingQualityPreset) {
+    /**
+     This is the lowest quality preset. It sets resolution to 480x270 and a bitrate to 464 kbps (real bitrate values may be slightly different after encoding). Suitable for both cellular and Wi-Fi connections.
+     */
+    NHSStreamingQualityPreset480,
+    /**
+     This is default quality preset suitable for both Wi-Fi and cellular connections. Also the highest one for cellular. It sets resolution to 640x360 and bitrate to 664 kbps.
+     */
+    NHSStreamingQualityPreset640,
+    /**
+     This preset sets resolution to 640x360 and bitrate to 1296 kbps. Can be used only for Wi-Fi connections.
+     */
+    NHSStreamingQualityPreset640HighBitrate,
+    /**
+     This preset sets resolution to 960x540 and bitrate to 3596 kbps. Can be used only for Wi-Fi connections.
+     */
+    NHSStreamingQualityPreset960,
+    /**
+     This preset sets resolution to 1280x720 and bitrate to 5128 kbps. Can be used only for Wi-Fi connections.
+     */
+    NHSStreamingQualityPreset1280,
+    /**
+     This preset sets resolution to 1280x720 and bitrate to 6628 kbps. Can be used only for Wi-Fi connections.
+     */
+    NHSStreamingQualityPreset1280HighBitrate
+};
+
+/**
  A completion for creating stream. Contains stream created with values from server and information about error, or nil if everything is allright.
  */
 typedef void (^NHSBroadcastCreateCompletion)(NHSStream *stream, NSError *error);
@@ -28,6 +58,8 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSError *error);
 /**
  NHSBroadcastManager is a single object that manages whole lifecycle of a broadcast from creation to stopping and deletion. All the backend method's calls are performed with broadcast manager. Listing existing broadcasts are also performed with this object.
  Broadcast manager maintains the broadcasts video upload queue keeping it persistent when application is no longer active.
+ 
+ Implement NHSBroadcastManagerDelegate methods to be notified about video streaming events.
  */
 
 @interface NHSBroadcastManager : NSObject
@@ -48,9 +80,13 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSError *error);
 @property (nonatomic, readonly) int64_t currentStreamBytesSent;
 
 /**
- Average bitrate of streaming video. Defaults to 440 kbps. Maximum value equals 8500 kbps. Recommended values for HLS bitrate described in [Bitrate recommendations](https://developer.apple.com/library/ios/technotes/tn2224/_index.html#//apple_ref/doc/uid/DTS40009745-CH1-BITRATERECOMMENDATIONS) and [Encoding settings](https://developer.apple.com/library/ios/technotes/tn2224/_index.html#//apple_ref/doc/uid/DTS40009745-CH1-SETTINGSFILES).
+ Use this property to set a streaming video quality. The consistency of broadcasting depends on the quality you choose for particular connection. We advice you to choose lower presets for cellular connections and higher ones for Wi-Fi connections. 
+ 
+    This property defaults to NHSStreamingQualityPreset640. Cannot be applied to a broadcasting that currently is in progress. If you set this property while streaming a video, quality will be applied next broadcasts.
+ 
+ __Important__. The maximum preset which can be used for cellular connections is NHSStreamingQualityPreset640. If you try setting higher preset broadcast manager will automatically be set to NHSStreamingQualityPreset640. The Wi-Fi connection has no restrictions.
  */
-@property (nonatomic, assign) NSUInteger averageBitrate;
+@property (nonatomic, assign) NHSStreamingQualityPreset qualityPreset;
 
 /**
  NHSBroadcastManager is a singleton object which means it is created only once per application lifetime and then is always available. To get current broadcast manager object developers have to call this class method.
@@ -96,6 +132,9 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSError *error);
 
 /**
  This method starts recording video to local temporary file and creates a request for creating a NHSStream object on server side. If server responds with success the broadcasting starts. If a stream fails to be created then no broadcasting will take place and appropriate delegate method will be called. Broadcast manager will start uploading video to the file storage automatically. Also this method triggers the location updates which will be set as broadcast coordinates. This method will have no effect if preview is not started.
+ 
+ When broadcasting have started the SDK starts using AVFoundation to write and compress video and ffmpeg to encode chunks of video as .ts files and then send them to the file storage. Currently all .ts files have a duration of 8 seconds. The upload process is going asynchrounously on background after each next chunk is created.
+
  */
 - (void)startBroadcasting;
 
@@ -134,18 +173,27 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSError *error);
                 completion:(void (^)(NSError *error))completion;
 
 /**
- Fetching a list of broadcasts made with current application.
+ Fetching a list of broadcasts made with current device.
  
  @param completion Completion has an array of NHSStream objects as returned broadcasts and NSError object with information about error.
  */
 - (void)fetchRecentStreamsWithCompletion:(NHSBroadcastFetchCompletion)completion;
 
 /**
+ Fetching a list of broadcasts made by specific author.
+
+ @param authorID String argument which specifies ID of the application that authored fetched videos.
+ @param completion Completion has an array of NHSStream objects as returned broadcasts and NSError object with information about error.
+*/
+- (void)fetchRecentStreamsOfAuthorWithID:(NSString *)authorID
+                              completion:(NHSBroadcastFetchCompletion)completion;
+
+/**
  Fetching a list of broadcasts filtered by coordinate, proximity and age.
  
  @param coordinate A reference coordinate which has to be matched by broadcast's coordinates.
- @param radiusInMeters A proximity radius for coordinate parameter. If broadcast's coordinates are happen inside the proximity radius - broadcast will be returned.
- @param date Date after which broadcast have to be made in order to be returned by request.
+ @param radiusInMeters _Optional_. A proximity radius for coordinate parameter. If broadcast's coordinates are happen inside the proximity radius - broadcast will be returned. If radius is set to 0 then it's ignored and all streams will be returned.
+ @param date _Optional_. Date after which broadcast have to be made in order to be returned by request. If date is set to nil then this parameter will be ignored.
  @param completion Completion will be called on server response and contains returned broadcasts array and an error instance.
  @return Instance of fetch operation is returned by this method. Operation does not require manual start.
  */

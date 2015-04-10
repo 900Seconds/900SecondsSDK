@@ -56,13 +56,13 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/averageBitrate">averageBitrate</option>
-		
 		<option value="//api/name/currentStreamBytesSent">currentStreamBytesSent</option>
 		
 		<option value="//api/name/delegate">delegate</option>
 		
 		<option value="//api/name/previewView">previewView</option>
+		
+		<option value="//api/name/qualityPreset">qualityPreset</option>
 		
 	</optgroup>
 	
@@ -297,8 +297,8 @@ Broadcast manager maintains the broadcasts video upload queue keeping it persist
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/averageBitrate" title="averageBitrate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/averageBitrate">&nbsp;&nbsp;averageBitrate</a></code>
+	<a name="//api/name/qualityPreset" title="qualityPreset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/qualityPreset">&nbsp;&nbsp;qualityPreset</a></code>
 </h3>
 
 	<div class="method-info">
@@ -308,12 +308,12 @@ Broadcast manager maintains the broadcasts video upload queue keeping it persist
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Average bitrate of streaming video. Defaults to 440 kbps. Maximum value equals 8500 kbps. Recommended values for HLS bitrate described in <a href="https://developer.apple.com/library/ios/technotes/tn2224/_index.html#//apple_ref/doc/uid/DTS40009745-CH1-BITRATERECOMMENDATIONS">Bitrate recommendations</a> and <a href="https://developer.apple.com/library/ios/technotes/tn2224/_index.html#//apple_ref/doc/uid/DTS40009745-CH1-SETTINGSFILES">Encoding settings</a>.</p>
+				<p>Use this property to set a streaming video quality. The consistency of broadcasting depends on the quality you choose for particular connection. We advice you to choose lower presets for cellular connections and higher ones for Wi-Fi connections.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSUInteger averageBitrate</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NHSStreamingQualityPreset qualityPreset</code></div>
 
 		    
 			
@@ -325,7 +325,12 @@ Broadcast manager maintains the broadcasts video upload queue keeping it persist
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Average bitrate of streaming video. Defaults to 440 kbps. Maximum value equals 8500 kbps. Recommended values for HLS bitrate described in <a href="https://developer.apple.com/library/ios/technotes/tn2224/_index.html#//apple_ref/doc/uid/DTS40009745-CH1-BITRATERECOMMENDATIONS">Bitrate recommendations</a> and <a href="https://developer.apple.com/library/ios/technotes/tn2224/_index.html#//apple_ref/doc/uid/DTS40009745-CH1-SETTINGSFILES">Encoding settings</a>.</p>
+				<p>Use this property to set a streaming video quality. The consistency of broadcasting depends on the quality you choose for particular connection. We advice you to choose lower presets for cellular connections and higher ones for Wi-Fi connections.</p>
+
+<pre><code>This property defaults to NHSStreamingQualityPreset640. Cannot be applied to a broadcasting that currently is in progress. If you set this property while streaming a video, quality will be applied next broadcasts.
+</code></pre>
+
+<p><strong>Important</strong>. The maximum preset which can be used for cellular connections is NHSStreamingQualityPreset640. If you try setting higher preset broadcast manager will automatically be set to NHSStreamingQualityPreset640. The Wi-Fi connection has no restrictions.</p>
 			</div>
 			
 

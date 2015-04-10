@@ -1,5 +1,5 @@
 //
-//  NHSCapturePreviewView.h
+//  DVCapturePreviewView.h
 //  Nine00SecondsSDK
 //
 //  Created by Nikolay Morev on 25.11.14.

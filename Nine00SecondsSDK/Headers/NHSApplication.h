@@ -25,6 +25,7 @@ typedef NS_ENUM(NSUInteger, NHSApplicationStorageType) {
 extern NSString *const NHSApplicationStorageCredentialsBucketKey;
 extern NSString *const NHSApplicationStorageCredentialsAccessKey;
 extern NSString *const NHSApplicationStorageCredentialsSecretKey;
+extern NSString *const NHSApplicationStorageRegionKey;
 
 /**
  An instance of NHSApplication is mainly used inside the SDK as an object that holds file storage credentials. Normally developers don't need to create objects of this class by themselves. NHSBroadcastManager creates and retains an object filled with proper credentials after performing authentication.

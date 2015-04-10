@@ -31,6 +31,7 @@
     
     self.broadcastManager = [NHSBroadcastManager sharedManager];
     self.broadcastManager.delegate = self;
+    self.broadcastManager.qualityPreset = NHSStreamingQualityPreset640HighBitrate;
     self.previewView = self.broadcastManager.previewView;
     [self.view insertSubview:self.previewView belowSubview:self.recButton];
     
