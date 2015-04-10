@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@import MapKit;
 
 @interface DVGStreamsMapViewController : UIViewController
 
 //! In window base coordinates
 @property (nonatomic) CGPoint selectedStreamCenter;
+@property (nonatomic, assign) CLLocationCoordinate2D initialCoordinates;
 
 @end

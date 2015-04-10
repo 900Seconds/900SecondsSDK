@@ -18,7 +18,6 @@
 #import "DVGStreamSelectionViewController.h"
 #import "DVGStreamsDataController.h"
 #import "AFHTTPRequestOperation.h"
-@import MapKit;
 
 @interface DVGStreamsMapViewController ()
 <MKMapViewDelegate,
@@ -54,8 +53,7 @@ CLLocationManagerDelegate>
 {
     [super viewDidLoad];
 
-    // Initial location: Helsinki
-    self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(60.171097, 24.941569), MKCoordinateSpanMake(0.5, 0.5));
+    self.mapView.region = MKCoordinateRegionMake(self.initialCoordinates, MKCoordinateSpanMake(.5, .5));
     [self setNeedsToRefreshData];
 
     self.clusteringController = [[KPClusteringController alloc] initWithMapView:self.mapView];

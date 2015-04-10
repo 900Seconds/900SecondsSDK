@@ -12,6 +12,7 @@
 		74ACB7A51A4C6A9B00900C67 /* DVGStreamsDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ACB7A21A4C6A9B00900C67 /* DVGStreamsDataController.m */; };
 		74ACB7A61A4C6A9B00900C67 /* DVGStreamSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ACB7A41A4C6A9B00900C67 /* DVGStreamSelectionViewController.m */; };
 		74ACB7C71A4DCF1C00900C67 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ACB7C61A4DCF1C00900C67 /* libiconv.dylib */; };
+		74D3D4191AD7D56B00D40781 /* DVGFeatureListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D3D4181AD7D56B00D40781 /* DVGFeatureListTableViewController.m */; };
 		74E8D11A1A44401700E646AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E8D1191A44401700E646AB /* main.m */; };
 		74E8D11D1A44401700E646AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E8D11C1A44401700E646AB /* AppDelegate.m */; };
 		74E8D1231A44401700E646AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E8D1211A44401700E646AB /* Main.storyboard */; };
@@ -54,6 +55,8 @@
 		74ACB7A31A4C6A9B00900C67 /* DVGStreamSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVGStreamSelectionViewController.h; sourceTree = "<group>"; };
 		74ACB7A41A4C6A9B00900C67 /* DVGStreamSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVGStreamSelectionViewController.m; sourceTree = "<group>"; };
 		74ACB7C61A4DCF1C00900C67 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		74D3D4171AD7D56B00D40781 /* DVGFeatureListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVGFeatureListTableViewController.h; sourceTree = "<group>"; };
+		74D3D4181AD7D56B00D40781 /* DVGFeatureListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVGFeatureListTableViewController.m; sourceTree = "<group>"; };
 		74E8D1141A44401700E646AB /* Nine00SecondsSDKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nine00SecondsSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E8D1181A44401700E646AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74E8D1191A44401700E646AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -285,6 +288,8 @@
 				869351671A4D4CF400FF8532 /* Map */,
 				86C870131A4CE2F7008CCEC0 /* Camera */,
 				86C870111A4CE2D3008CCEC0 /* Streams List */,
+				74D3D4171AD7D56B00D40781 /* DVGFeatureListTableViewController.h */,
+				74D3D4181AD7D56B00D40781 /* DVGFeatureListTableViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -481,6 +486,7 @@
 				869351741A4D4D0A00FF8532 /* DVGStreamOverlayRenderer.m in Sources */,
 				74E8D11D1A44401700E646AB /* AppDelegate.m in Sources */,
 				74ACB7A51A4C6A9B00900C67 /* DVGStreamsDataController.m in Sources */,
+				74D3D4191AD7D56B00D40781 /* DVGFeatureListTableViewController.m in Sources */,
 				74E8D11A1A44401700E646AB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
