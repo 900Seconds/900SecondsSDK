@@ -223,10 +223,21 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSError *error);
 /**
  Triggered after calling startBroadcast method if stream was successfully created.
  
- @param manager Current broadcast manager
+ @param manager Current broadcast manager.
  @param stream Created stream.
  */
 - (void)broadcastManager:(NHSBroadcastManager *)manager didStartBroadcastWithStream:(NHSStream *)stream;
+
+/**
+ Triggered when preview image for current streaming video is uploaded on server and included into stream object.
+ 
+ After every stream creation it's first captured video frame will be turned into a UIImage object and sent to a file storage. After this was performed the image url is set on the stream object on server. Then when all the process is completed this delegate method will be called.
+ 
+ @param manager Current broadcast manager.
+ @param streamID ID of stream for which the preview has been created.
+ @param error An error occurred while uploading image to file storage. Equals to _nil_ if image was uploaded successfully.
+ */
+- (void)broadcastManager:(NHSBroadcastManager *)manager didCreatePreviewForStreamWithID:(NSString *)streamID withError:(NSError *)error;
 
 /**
  Triggered when recording error has occured.

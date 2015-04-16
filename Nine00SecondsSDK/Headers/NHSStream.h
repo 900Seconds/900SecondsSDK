@@ -30,6 +30,11 @@
 @property (nonatomic, copy) NSString *name;
 
 /**
+ URL to stream preview image on file storage.
+ */
+@property (nonatomic, copy) NSURL *previewImageURL;
+
+/**
  Coordinates of the location where the broadcast was streamed.
  */
 @property (nonatomic) CLLocationCoordinate2D locationCoordinate;
