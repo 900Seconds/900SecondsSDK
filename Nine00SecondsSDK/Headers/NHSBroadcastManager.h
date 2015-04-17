@@ -235,9 +235,10 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSError *error);
  
  @param manager Current broadcast manager.
  @param streamID ID of stream for which the preview has been created.
+ @param imageURL An URL address of image on the file storage.
  @param error An error occurred while uploading image to file storage. Equals to _nil_ if image was uploaded successfully.
  */
-- (void)broadcastManager:(NHSBroadcastManager *)manager didCreatePreviewForStreamWithID:(NSString *)streamID withError:(NSError *)error;
+- (void)broadcastManager:(NHSBroadcastManager *)manager didCreatePreviewImageForStreamWithID:(NSString *)streamID imageURL:(NSURL *)imageURL error:(NSError *)error;
 
 /**
  Triggered when recording error has occured.
