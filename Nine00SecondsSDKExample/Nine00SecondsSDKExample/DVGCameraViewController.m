@@ -172,6 +172,14 @@
     }
 }
 
+- (void)broadcastManager:(NHSBroadcastManager *)manager didCreatePreviewImageForStreamWithID:(NSString *)streamID imageURL:(NSURL *)imageURL error:(NSError *)error {
+    if (error) {
+        NSLog(@"Failed to create preview image : %@", error);
+    } else {
+        NSLog(@"Created preview image for streamID %@: previewURL: %@", streamID, imageURL);
+    }
+}
+
 - (void)broadcastManagerDidFailToCreateStream:(NHSBroadcastManager *)manager withError:(NSError *)error {
     NSLog(@"Failed to create stream : %@", error);
 }
