@@ -49,9 +49,9 @@ typedef NS_ENUM(NSUInteger, NHSStreamingQualityPreset) {
 typedef void (^NHSBroadcastCreateCompletion)(NHSStream *stream, NSError *error);
 
 /**
- A completion for fetching list of streams or viewers. Contains array of fethed items and NSError instance.
+ A completion for fetching list of streams or viewers. Contains array of fethed items, total number of items on server and NSError instance. Total number is needed because server returns items with pagination.
  */
-typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSError *error);
+typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumberOfItems, NSError *error);
 
 @protocol NHSBroadcastManagerDelegate;
 
