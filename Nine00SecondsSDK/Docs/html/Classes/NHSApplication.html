@@ -58,6 +58,8 @@
 		
 		<option value="//api/name/applicationID">applicationID</option>
 		
+		<option value="//api/name/currentAuthorID">currentAuthorID</option>
+		
 		<option value="//api/name/name">name</option>
 		
 		<option value="//api/name/storageCredentials">storageCredentials</option>
@@ -79,6 +81,10 @@
 	<optgroup label="Instance Methods">
 		
 		<option value="//api/name/initWithApplicationID:">- initWithApplicationID:</option>
+		
+		<option value="//api/name/loginWithAuthorID:">- loginWithAuthorID:</option>
+		
+		<option value="//api/name/logout">- logout</option>
 		
 	</optgroup>
 	
@@ -316,6 +322,52 @@ To access credentials values developers should use <em>NHSApplicationStorageCred
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/currentAuthorID" title="currentAuthorID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentAuthorID">&nbsp;&nbsp;currentAuthorID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns current author ID string. If <a href="#//api/name/loginWithAuthorID:">[NHSApplication loginWithAuthorID:]</a> was called, this property returns passed authorID. Otherwise it returns anonymous authorID which is generated UUID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *currentAuthorID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns current author ID string. If <a href="#//api/name/loginWithAuthorID:">[NHSApplication loginWithAuthorID:]</a> was called, this property returns passed authorID. Otherwise it returns anonymous authorID which is generated UUID.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NHSApplication.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/initWithApplicationID:" title="initWithApplicationID:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/initWithApplicationID:">&ndash;&nbsp;initWithApplicationID:</a></code>
 </h3>
@@ -431,6 +483,98 @@ To access credentials values developers should use <em>NHSApplicationStorageCred
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/loginWithAuthorID:" title="loginWithAuthorID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loginWithAuthorID:">&ndash;&nbsp;loginWithAuthorID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to manually set author ID of current user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)loginWithAuthorID:(NSString *)<em>authorID</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Call this method to manually set author ID of current user.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NHSApplication.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logout" title="logout"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logout">&ndash;&nbsp;logout</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method sets the authorID to <em>nil</em>. Next time when the property <em><a href="#//api/name/currentAuthorID">currentAuthorID</a></em> will be called - it&rsquo;ll generate new authorID on return.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)logout</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method sets the authorID to <em>nil</em>. Next time when the property <em><a href="#//api/name/currentAuthorID">currentAuthorID</a></em> will be called - it&rsquo;ll generate new authorID on return.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NHSApplication.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -444,7 +588,7 @@ To access credentials values developers should use <em>NHSApplicationStorageCred
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 900 Seconds Oy. All rights reserved. Updated: 2015-04-17</p>
+						<p class="copyright">Copyright &copy; 2015 900 Seconds Oy. All rights reserved. Updated: 2015-04-20</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

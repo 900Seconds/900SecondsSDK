@@ -54,6 +54,11 @@ extern NSString *const NHSApplicationStorageRegionKey;
 @property (nonatomic) NSDictionary *storageCredentials;
 
 /**
+ Returns current author ID string. If [NHSApplication loginWithAuthorID:] was called, this property returns passed authorID. Otherwise it returns anonymous authorID which is generated UUID.
+ */
+@property (nonatomic, readonly) NSString *currentAuthorID;
+
+/**
  Creates NHSApplication instance with application ID.
  
  @param applicationID The current application's appID.
@@ -66,5 +71,15 @@ extern NSString *const NHSApplicationStorageRegionKey;
  @param dictionary A key-value table of values that should be set on a new NHSApplication instance.
  */
 + (instancetype)applicationWithDictionary:(NSDictionary *)dictionary;
+
+/**
+ Call this method to manually set author ID of current user.
+ */
+- (void)loginWithAuthorID:(NSString *)authorID;
+
+/**
+ This method sets the authorID to _nil_. Next time when the property _currentAuthorID_ will be called - it'll generate new authorID on return.
+ */
+- (void)logout;
 
 @end

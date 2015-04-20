@@ -15,4 +15,3 @@
 #import "NHSStreamPlayerController.h"
 #import "NHSStreamPlayerViewController.h"
 #import "NSDate+NHSUtilities.h"
-#import "UIApplication+NHSUtilities.h"
