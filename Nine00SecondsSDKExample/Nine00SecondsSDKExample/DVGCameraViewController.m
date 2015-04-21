@@ -180,6 +180,10 @@
     }
 }
 
+- (void)broadcastManager:(NHSBroadcastManager *)manager didUpdateLocationForStreamWithID:(NSString *)streamID withCoordinate:(CLLocationCoordinate2D)coordinate {
+    NSLog(@"Stream %@ updated it's location to %f,%f", streamID, coordinate.latitude, coordinate.longitude);
+}
+
 - (void)broadcastManagerDidFailToCreateStream:(NHSBroadcastManager *)manager withError:(NSError *)error {
     NSLog(@"Failed to create stream : %@", error);
 }
