@@ -229,16 +229,15 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
 - (void)broadcastManager:(NHSBroadcastManager *)manager didStartBroadcastWithStream:(NHSStream *)stream;
 
 /**
- Triggered when preview image for current streaming video is uploaded on server and included into stream object.
+ Triggered when preview image for current streaming video is created. Afterwards image will be uploaded on server and included into stream object.
  
- After every stream creation it's first captured video frame will be turned into a UIImage object and sent to a file storage. After this was performed the image url is set on the stream object on server. Then when all the process is completed this delegate method will be called.
+ After every stream creation it's first captured video frame will be turned into a UIImage object and sent to a file storage. After this was performed the image url is set on the stream object on server.
  
  @param manager Current broadcast manager.
  @param streamID ID of stream for which the preview has been created.
- @param imageURL An URL address of image on the file storage.
- @param error An error occurred while uploading image to file storage. Equals to _nil_ if image was uploaded successfully.
+ @param previewImage UIImage object which holds first video frame.
  */
-- (void)broadcastManager:(NHSBroadcastManager *)manager didCreatePreviewImageForStreamWithID:(NSString *)streamID imageURL:(NSURL *)imageURL error:(NSError *)error;
+- (void)broadcastManager:(NHSBroadcastManager *)manager didCreatePreviewImageForStreamWithID:(NSString *)streamID image:(UIImage *)previewImage;
 
 /**
  This method is called when NHSBroadcastManager has successfully updated coordinate for streaming video. Stream location gets updated during broadcasting when user location has significantly changed.

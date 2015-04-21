@@ -60,7 +60,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/broadcastManager:didCreatePreviewImageForStreamWithID:imageURL:error:">- broadcastManager:didCreatePreviewImageForStreamWithID:imageURL:error:</option>
+		<option value="//api/name/broadcastManager:didCreatePreviewImageForStreamWithID:image:">- broadcastManager:didCreatePreviewImageForStreamWithID:image:</option>
 		
 		<option value="//api/name/broadcastManager:didStartBroadcastWithStream:">- broadcastManager:didStartBroadcastWithStream:</option>
 		
@@ -189,8 +189,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/broadcastManager:didCreatePreviewImageForStreamWithID:imageURL:error:" title="broadcastManager:didCreatePreviewImageForStreamWithID:imageURL:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/broadcastManager:didCreatePreviewImageForStreamWithID:imageURL:error:">&ndash;&nbsp;broadcastManager:didCreatePreviewImageForStreamWithID:imageURL:error:</a></code>
+	<a name="//api/name/broadcastManager:didCreatePreviewImageForStreamWithID:image:" title="broadcastManager:didCreatePreviewImageForStreamWithID:image:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/broadcastManager:didCreatePreviewImageForStreamWithID:image:">&ndash;&nbsp;broadcastManager:didCreatePreviewImageForStreamWithID:image:</a></code>
 <span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
@@ -200,12 +200,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Triggered when preview image for current streaming video is uploaded on server and included into stream object.</p>
+				<p>Triggered when preview image for current streaming video is created. Afterwards image will be uploaded on server and included into stream object.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)broadcastManager:(NHSBroadcastManager *)<em>manager</em> didCreatePreviewImageForStreamWithID:(NSString *)<em>streamID</em> imageURL:(NSURL *)<em>imageURL</em> error:(NSError *)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)broadcastManager:(NHSBroadcastManager *)<em>manager</em> didCreatePreviewImageForStreamWithID:(NSString *)<em>streamID</em> image:(UIImage *)<em>previewImage</em></code></div>
 
 		    
 			
@@ -224,13 +224,8 @@
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>imageURL</code></th>
-						<td><p>An URL address of image on the file storage.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>An error occurred while uploading image to file storage. Equals to <em>nil</em> if image was uploaded successfully.</p></td>
+						<th scope="row" class="argument-name"><code>previewImage</code></th>
+						<td><p>UIImage object which holds first video frame.</p></td>
 					</tr>
 				
 				</table>
@@ -244,9 +239,9 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Triggered when preview image for current streaming video is uploaded on server and included into stream object.</p>
+				<p>Triggered when preview image for current streaming video is created. Afterwards image will be uploaded on server and included into stream object.</p>
 
-<p>After every stream creation it&rsquo;s first captured video frame will be turned into a UIImage object and sent to a file storage. After this was performed the image url is set on the stream object on server. Then when all the process is completed this delegate method will be called.</p>
+<p>After every stream creation it&rsquo;s first captured video frame will be turned into a UIImage object and sent to a file storage. After this was performed the image url is set on the stream object on server.</p>
 			</div>
 			
 
