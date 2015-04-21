@@ -19,7 +19,7 @@
 {
     if (self.type == DVGStreamsDataControllerTypeRecent) {
         @weakify(self);
-        [[NHSBroadcastManager sharedManager] fetchRecentStreamsWithCompletion:^(NSArray *streams, NSInteger totalNumber, NSError *error) {
+        [[NHSBroadcastManager sharedManager] fetchStreamsUntilDate:nil withCompletion:^(NSArray *streams, NSInteger totalNumber, NSError *error) {
             @strongify(self);
             if (streams) {
                 self.streams = streams;
@@ -32,7 +32,7 @@
     } else {
         [[NHSBroadcastManager sharedManager] fetchStreamsNearCoordinate:self.coordinate
                                                              withRadius:self.radius
-                                                              sinceDate:self.sinceDate
+                                                              untilDate:self.sinceDate
                                                          withCompletion:^(NSArray *streamsArray, NSInteger totalNumber, NSError *error) {
                                                              if (streamsArray.count) {
                                                                  self.streams = streamsArray;

@@ -172,12 +172,8 @@
     }
 }
 
-- (void)broadcastManager:(NHSBroadcastManager *)manager didCreatePreviewImageForStreamWithID:(NSString *)streamID imageURL:(NSURL *)imageURL error:(NSError *)error {
-    if (error) {
-        NSLog(@"Failed to create preview image : %@", error);
-    } else {
-        NSLog(@"Created preview image for streamID %@: previewURL: %@", streamID, imageURL);
-    }
+- (void)broadcastManager:(NHSBroadcastManager *)manager didCreatePreviewImageForStreamWithID:(NSString *)streamID image:(UIImage *)previewImage {
+    NSLog(@"Stream %@ preview image %.0fx%.0f", streamID, previewImage.size.width, previewImage.size.height);
 }
 
 - (void)broadcastManager:(NHSBroadcastManager *)manager didUpdateLocationForStreamWithID:(NSString *)streamID withCoordinate:(CLLocationCoordinate2D)coordinate {

@@ -82,11 +82,11 @@
 		
 		<option value="//api/name/broadcastingURLWithStream:">- broadcastingURLWithStream:</option>
 		
-		<option value="//api/name/fetchRecentStreamsOfAuthorWithID:completion:">- fetchRecentStreamsOfAuthorWithID:completion:</option>
+		<option value="//api/name/fetchStreamsNearCoordinate:withRadius:untilDate:withCompletion:">- fetchStreamsNearCoordinate:withRadius:untilDate:withCompletion:</option>
 		
-		<option value="//api/name/fetchRecentStreamsWithCompletion:">- fetchRecentStreamsWithCompletion:</option>
+		<option value="//api/name/fetchStreamsOfAuthorWithID:untilDate:completion:">- fetchStreamsOfAuthorWithID:untilDate:completion:</option>
 		
-		<option value="//api/name/fetchStreamsNearCoordinate:withRadius:sinceDate:withCompletion:">- fetchStreamsNearCoordinate:withRadius:sinceDate:withCompletion:</option>
+		<option value="//api/name/fetchStreamsUntilDate:withCompletion:">- fetchStreamsUntilDate:withCompletion:</option>
 		
 		<option value="//api/name/removeStreamWithID:completion:">- removeStreamWithID:completion:</option>
 		
@@ -104,7 +104,7 @@
 		
 		<option value="//api/name/toggleCamera">- toggleCamera</option>
 		
-		<option value="//api/name/viewersForStream:withCompletion:">- viewersForStream:withCompletion:</option>
+		<option value="//api/name/viewersForStream:untilDate:withCompletion:">- viewersForStream:untilDate:withCompletion:</option>
 		
 	</optgroup>
 	
@@ -679,8 +679,8 @@ In order not to loose the upload when application goes to background broadcast m
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/viewersForStream:withCompletion:" title="viewersForStream:withCompletion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/viewersForStream:withCompletion:">&ndash;&nbsp;viewersForStream:withCompletion:</a></code>
+	<a name="//api/name/viewersForStream:untilDate:withCompletion:" title="viewersForStream:untilDate:withCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/viewersForStream:untilDate:withCompletion:">&ndash;&nbsp;viewersForStream:untilDate:withCompletion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -695,7 +695,7 @@ In order not to loose the upload when application goes to background broadcast m
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)viewersForStream:(NHSStream *)<em>stream</em> withCompletion:(NHSBroadcastFetchCompletion)<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)viewersForStream:(NHSStream *)<em>stream</em> untilDate:(NSDate *)<em>untilDate</em> withCompletion:(NHSBroadcastFetchCompletion)<em>completion</em></code></div>
 
 		    
 			
@@ -706,6 +706,11 @@ In order not to loose the upload when application goes to background broadcast m
 					<tr>
 						<th scope="row" class="argument-name"><code>stream</code></th>
 						<td><p>A stream which ID will be used to request a viewers list.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>untilDate</code></th>
+						<td><p><em>Optional</em>. If set the method will return a list of 30 viewers who watched the stream before the <em>untilDate</em>. If <em>nil</em> then the method will return last 30 viewers.</p></td>
 					</tr>
 				
 					<tr>
@@ -951,8 +956,8 @@ In order not to loose the upload when application goes to background broadcast m
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/fetchRecentStreamsWithCompletion:" title="fetchRecentStreamsWithCompletion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchRecentStreamsWithCompletion:">&ndash;&nbsp;fetchRecentStreamsWithCompletion:</a></code>
+	<a name="//api/name/fetchStreamsUntilDate:withCompletion:" title="fetchStreamsUntilDate:withCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchStreamsUntilDate:withCompletion:">&ndash;&nbsp;fetchStreamsUntilDate:withCompletion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -962,18 +967,23 @@ In order not to loose the upload when application goes to background broadcast m
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Fetching a list of broadcasts made with current device.</p>
+				<p>Fetching a list of broadcasts made with current author.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)fetchRecentStreamsWithCompletion:(NHSBroadcastFetchCompletion)<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)fetchStreamsUntilDate:(NSDate *)<em>untilDate</em> withCompletion:(NHSBroadcastFetchCompletion)<em>completion</em></code></div>
 
 		    
 			
 			<div class="method-subsection arguments-section parameters">
 				<h4 class="method-subtitle parameter-title">Parameters</h4>
 				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>untilDate</code></th>
+						<td><p><em>Optional</em>. If this parameter has been set method will return 30 streams before this date. If passed <em>nil</em> then method will return 30 most recent streams.</p></td>
+					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
@@ -991,7 +1001,7 @@ In order not to loose the upload when application goes to background broadcast m
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Fetching a list of broadcasts made with current device.</p>
+				<p>Fetching a list of broadcasts made with current author.</p>
 			</div>
 			
 
@@ -1009,8 +1019,8 @@ In order not to loose the upload when application goes to background broadcast m
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/fetchRecentStreamsOfAuthorWithID:completion:" title="fetchRecentStreamsOfAuthorWithID:completion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchRecentStreamsOfAuthorWithID:completion:">&ndash;&nbsp;fetchRecentStreamsOfAuthorWithID:completion:</a></code>
+	<a name="//api/name/fetchStreamsOfAuthorWithID:untilDate:completion:" title="fetchStreamsOfAuthorWithID:untilDate:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchStreamsOfAuthorWithID:untilDate:completion:">&ndash;&nbsp;fetchStreamsOfAuthorWithID:untilDate:completion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1025,7 +1035,7 @@ In order not to loose the upload when application goes to background broadcast m
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)fetchRecentStreamsOfAuthorWithID:(NSString *)<em>authorID</em> completion:(NHSBroadcastFetchCompletion)<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)fetchStreamsOfAuthorWithID:(NSString *)<em>authorID</em> untilDate:(NSDate *)<em>untilDate</em> completion:(NHSBroadcastFetchCompletion)<em>completion</em></code></div>
 
 		    
 			
@@ -1039,6 +1049,11 @@ In order not to loose the upload when application goes to background broadcast m
 					</tr>
 				
 					<tr>
+						<th scope="row" class="argument-name"><code>untilDate</code></th>
+						<td><p><em>Optional</em>. If this parameter has been set method will return 30 streams before this date. If passed <em>nil</em> then method will return 30 most recent streams.</p></td>
+					</tr>
+				
+					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
 						<td><p>Completion has an array of <a href="../Classes/NHSStream.html">NHSStream</a> objects as returned broadcasts and NSError object with information about error.</p></td>
 					</tr>
@@ -1072,8 +1087,8 @@ In order not to loose the upload when application goes to background broadcast m
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/fetchStreamsNearCoordinate:withRadius:sinceDate:withCompletion:" title="fetchStreamsNearCoordinate:withRadius:sinceDate:withCompletion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchStreamsNearCoordinate:withRadius:sinceDate:withCompletion:">&ndash;&nbsp;fetchStreamsNearCoordinate:withRadius:sinceDate:withCompletion:</a></code>
+	<a name="//api/name/fetchStreamsNearCoordinate:withRadius:untilDate:withCompletion:" title="fetchStreamsNearCoordinate:withRadius:untilDate:withCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchStreamsNearCoordinate:withRadius:untilDate:withCompletion:">&ndash;&nbsp;fetchStreamsNearCoordinate:withRadius:untilDate:withCompletion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1088,7 +1103,7 @@ In order not to loose the upload when application goes to background broadcast m
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (AFHTTPRequestOperation *)fetchStreamsNearCoordinate:(CLLocationCoordinate2D)<em>coordinate</em> withRadius:(CGFloat)<em>radiusInMeters</em> sinceDate:(NSDate *)<em>date</em> withCompletion:(NHSBroadcastFetchCompletion)<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (AFHTTPRequestOperation *)fetchStreamsNearCoordinate:(CLLocationCoordinate2D)<em>coordinate</em> withRadius:(CGFloat)<em>radiusInMeters</em> untilDate:(NSDate *)<em>date</em> withCompletion:(NHSBroadcastFetchCompletion)<em>completion</em></code></div>
 
 		    
 			
@@ -1108,7 +1123,7 @@ In order not to loose the upload when application goes to background broadcast m
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>date</code></th>
-						<td><p><em>Optional</em>. Date after which broadcast have to be made in order to be returned by request. If date is set to nil then this parameter will be ignored.</p></td>
+						<td><p><em>Optional</em>. Date before which broadcast have to be made in order to be returned by request. If date is set to nil then this parameter will be ignored and 30 latest streams will be passed in response.</p></td>
 					</tr>
 				
 					<tr>

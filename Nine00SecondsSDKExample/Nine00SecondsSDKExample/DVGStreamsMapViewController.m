@@ -148,7 +148,7 @@ CLLocationManagerDelegate>
 
     float radius = [self radiusFromCurrentSpan];
     @weakify(self);
-    self.fetchRequestOperation = [[NHSBroadcastManager sharedManager] fetchStreamsNearCoordinate:coordinate withRadius:radius sinceDate:nil withCompletion:^(NSArray *streamsArray, NSInteger totalNumber, NSError *error) {
+    self.fetchRequestOperation = [[NHSBroadcastManager sharedManager] fetchStreamsNearCoordinate:coordinate withRadius:radius untilDate:nil withCompletion:^(NSArray *streamsArray, NSInteger totalNumber, NSError *error) {
         @strongify(self);
         if (streamsArray) {
             self.streams = streamsArray;

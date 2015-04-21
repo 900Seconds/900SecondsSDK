@@ -142,9 +142,12 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
  This method requests list of users currently watching specified stream. Response contains array of NHSViewer objects and NSError.
  
  @param stream A stream which ID will be used to request a viewers list.
+ @param untilDate _Optional_. If set the method will return a list of 30 viewers who watched the stream before the _untilDate_. If _nil_ then the method will return last 30 viewers.
  @param completion A completion to be called on server response.
  */
-- (void)viewersForStream:(NHSStream *)stream withCompletion:(NHSBroadcastFetchCompletion)completion;
+- (void)viewersForStream:(NHSStream *)stream
+               untilDate:(NSDate *)untilDate
+          withCompletion:(NHSBroadcastFetchCompletion)completion;
 
 /**
  Call this method to recording new frames to temporary video file. Afterwards the current stream will upload last chunks of video and will inform server that the corresponding broadcast is stopped. This method will have no effect if there is no recording session.
@@ -173,33 +176,37 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
                 completion:(void (^)(NSError *error))completion;
 
 /**
- Fetching a list of broadcasts made with current device.
+ Fetching a list of broadcasts made with current author.
  
+ @param untilDate _Optional_. If this parameter has been set method will return 30 streams before this date. If passed _nil_ then method will return 30 most recent streams.
  @param completion Completion has an array of NHSStream objects as returned broadcasts and NSError object with information about error.
  */
-- (void)fetchRecentStreamsWithCompletion:(NHSBroadcastFetchCompletion)completion;
+- (void)fetchStreamsUntilDate:(NSDate *)untilDate
+               withCompletion:(NHSBroadcastFetchCompletion)completion;
 
 /**
  Fetching a list of broadcasts made by specific author.
 
  @param authorID String argument which specifies ID of the application that authored fetched videos.
+ @param untilDate _Optional_. If this parameter has been set method will return 30 streams before this date. If passed _nil_ then method will return 30 most recent streams.
  @param completion Completion has an array of NHSStream objects as returned broadcasts and NSError object with information about error.
 */
-- (void)fetchRecentStreamsOfAuthorWithID:(NSString *)authorID
-                              completion:(NHSBroadcastFetchCompletion)completion;
+- (void)fetchStreamsOfAuthorWithID:(NSString *)authorID
+                         untilDate:(NSDate *)untilDate
+                        completion:(NHSBroadcastFetchCompletion)completion;
 
 /**
  Fetching a list of broadcasts filtered by coordinate, proximity and age.
  
  @param coordinate A reference coordinate which has to be matched by broadcast's coordinates.
  @param radiusInMeters _Optional_. A proximity radius for coordinate parameter. If broadcast's coordinates are happen inside the proximity radius - broadcast will be returned. If radius is set to 0 then it's ignored and all streams will be returned.
- @param date _Optional_. Date after which broadcast have to be made in order to be returned by request. If date is set to nil then this parameter will be ignored.
+ @param date _Optional_. Date before which broadcast have to be made in order to be returned by request. If date is set to nil then this parameter will be ignored and 30 latest streams will be passed in response.
  @param completion Completion will be called on server response and contains returned broadcasts array and an error instance.
  @return Instance of fetch operation is returned by this method. Operation does not require manual start.
  */
 - (AFHTTPRequestOperation *)fetchStreamsNearCoordinate:(CLLocationCoordinate2D)coordinate
                                             withRadius:(CGFloat)radiusInMeters
-                                             sinceDate:(NSDate *)date
+                                             untilDate:(NSDate *)date
                                         withCompletion:(NHSBroadcastFetchCompletion)completion;
 
 /**@name Playing broadcasts*/
