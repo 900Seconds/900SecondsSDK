@@ -64,6 +64,13 @@
  */
 @property (nonatomic, copy) NSDate *updatedAt;
 
+
+/**
+ Time, after which server object will be deleted.
+ */
+@property (nonatomic, copy) NSDate *validUntil;
+
+
 /**
  Returns YES, if broadcasts is streaming now. Otherwise returns NO.
  */
