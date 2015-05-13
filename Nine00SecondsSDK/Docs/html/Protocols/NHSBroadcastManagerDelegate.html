@@ -52,6 +52,8 @@
 	
 	<option value="//api/name/broadcastManager:didUpdateLocationForStreamWithID:withCoordinate:">&nbsp;&nbsp;&nbsp;&nbsp;- broadcastManager:didUpdateLocationForStreamWithID:withCoordinate:</option>
 	
+	<option value="//api/name/broadcastManager:didUpdateLocationForStreamWithID:withLocation:">&nbsp;&nbsp;&nbsp;&nbsp;- broadcastManager:didUpdateLocationForStreamWithID:withLocation:</option>
+	
 	<option value="//api/name/broadcastManagerCameraInterfaceOrientation:">&nbsp;&nbsp;&nbsp;&nbsp;- broadcastManagerCameraInterfaceOrientation:</option>
 	
 	<option value="//api/name/broadcastManagerDidFailToCreateStream:withError:">&nbsp;&nbsp;&nbsp;&nbsp;- broadcastManagerDidFailToCreateStream:withError:</option>
@@ -95,6 +97,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/broadcastManager:didStopBroadcastOfStream:">broadcastManager:didStopBroadcastOfStream:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/broadcastManager:didUpdateLocationForStreamWithID:withCoordinate:">broadcastManager:didUpdateLocationForStreamWithID:withCoordinate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/broadcastManager:didUpdateLocationForStreamWithID:withLocation:">broadcastManager:didUpdateLocationForStreamWithID:withLocation:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/broadcastManagerCameraInterfaceOrientation:">broadcastManagerCameraInterfaceOrientation:</a></span></li>
 	
@@ -175,6 +179,14 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/broadcastManager:didUpdateLocationForStreamWithID:withCoordinate:">&ndash;&nbsp;broadcastManager:didUpdateLocationForStreamWithID:withCoordinate:</a></code>
 		<span class="tooltip"><p>This method is called when <a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> has successfully updated coordinate for streaming video. Stream location gets updated during broadcasting when user location has significantly changed.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/broadcastManager:didUpdateLocationForStreamWithID:withLocation:">&ndash;&nbsp;broadcastManager:didUpdateLocationForStreamWithID:withLocation:</a></code>
+		<span class="tooltip"><p>This method is called when <a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> has successfully updated coordinate for streaming video. Stream location gets updated during broadcasting when user location has significantly changed.
+same as &ndash; (void)broadcastManager:(<a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> <em>)manager didUpdateLocationForStreamWithID:(NSString </em>)streamID withCoordinate:(CLLocationCoordinate2D)coordinate, but uses location instead of coordinate only</p></span>
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
@@ -467,6 +479,69 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/broadcastManager:didUpdateLocationForStreamWithID:withLocation:" title="broadcastManager:didUpdateLocationForStreamWithID:withLocation:"></a>
+	<h3 class="subsubtitle method-title">broadcastManager:didUpdateLocationForStreamWithID:withLocation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is called when <a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> has successfully updated coordinate for streaming video. Stream location gets updated during broadcasting when user location has significantly changed.
+same as &ndash; (void)broadcastManager:(<a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> <em>)manager didUpdateLocationForStreamWithID:(NSString </em>)streamID withCoordinate:(CLLocationCoordinate2D)coordinate, but uses location instead of coordinate only</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)broadcastManager:(NHSBroadcastManager *)<em>manager</em> didUpdateLocationForStreamWithID:(NSString *)<em>streamID</em> withLocation:(CLLocation *)<em>location</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>manager</em></dt>
+			<dd><p>Current broadcast manager.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>streamID</em></dt>
+			<dd><p>ID of stream which updated it&rsquo;s location coordinate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>location</em></dt>
+			<dd><p>New location coordinate of stream.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method is called when <a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> has successfully updated coordinate for streaming video. Stream location gets updated during broadcasting when user location has significantly changed.
+same as &ndash; (void)broadcastManager:(<a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> <em>)manager didUpdateLocationForStreamWithID:(NSString </em>)streamID withCoordinate:(CLLocationCoordinate2D)coordinate, but uses location instead of coordinate only</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/broadcastManagerCameraInterfaceOrientation:" title="broadcastManagerCameraInterfaceOrientation:"></a>
 	<h3 class="subsubtitle method-title">broadcastManagerCameraInterfaceOrientation:</h3>
 	
@@ -693,7 +768,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 900 Seconds Oy. All rights reserved. (Last updated: 2015-05-12)</span><br />
+						<p><span class="copyright">&copy; 2015 900 Seconds Oy. All rights reserved. (Last updated: 2015-05-13)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

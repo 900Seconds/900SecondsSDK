@@ -256,6 +256,16 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
 - (void)broadcastManager:(NHSBroadcastManager *)manager didUpdateLocationForStreamWithID:(NSString *)streamID withCoordinate:(CLLocationCoordinate2D)coordinate;
 
 /**
+ This method is called when NHSBroadcastManager has successfully updated coordinate for streaming video. Stream location gets updated during broadcasting when user location has significantly changed.
+ same as - (void)broadcastManager:(NHSBroadcastManager *)manager didUpdateLocationForStreamWithID:(NSString *)streamID withCoordinate:(CLLocationCoordinate2D)coordinate, but uses location instead of coordinate only
+ 
+ @param manager Current broadcast manager.
+ @param streamID ID of stream which updated it's location coordinate.
+ @param location New location coordinate of stream.
+ */
+- (void)broadcastManager:(NHSBroadcastManager *)manager didUpdateLocationForStreamWithID:(NSString *)streamID withLocation:(CLLocation*)location;
+
+/**
  Triggered when recording error has occured.
  
  @param manager Current broadcast manager.

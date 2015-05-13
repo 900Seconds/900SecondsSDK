@@ -40,6 +40,11 @@
 @property (nonatomic) CLLocationCoordinate2D locationCoordinate;
 
 /**
+ Precision flag (0/1) of the broadcast locationCoordinate.
+ */
+@property (nonatomic) NSInteger locationPrecision;
+
+/**
  Amount of users who watch this broadcast.
  */
 @property (nonatomic) NSInteger popularity;
