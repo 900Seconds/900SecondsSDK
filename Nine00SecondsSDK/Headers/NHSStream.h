@@ -50,6 +50,11 @@
 @property (nonatomic) NSInteger popularity;
 
 /**
+ Golden streams are more important than other
+ */
+@property (nonatomic) NSInteger goldenState;
+
+/**
  The time on which last segment of video was recorded.
  */
 @property (nonatomic, copy) NSDate *lastSegmentCreatedAt;
