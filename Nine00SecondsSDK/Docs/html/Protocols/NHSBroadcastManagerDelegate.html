@@ -54,6 +54,8 @@
 	
 	<option value="//api/name/broadcastManager:didUpdateLocationForStreamWithID:withLocation:">&nbsp;&nbsp;&nbsp;&nbsp;- broadcastManager:didUpdateLocationForStreamWithID:withLocation:</option>
 	
+	<option value="//api/name/broadcastManager:didUploadedChunk:forStreamWithID:withError:">&nbsp;&nbsp;&nbsp;&nbsp;- broadcastManager:didUploadedChunk:forStreamWithID:withError:</option>
+	
 	<option value="//api/name/broadcastManagerCameraInterfaceOrientation:">&nbsp;&nbsp;&nbsp;&nbsp;- broadcastManagerCameraInterfaceOrientation:</option>
 	
 	<option value="//api/name/broadcastManagerDidFailToCreateStream:withError:">&nbsp;&nbsp;&nbsp;&nbsp;- broadcastManagerDidFailToCreateStream:withError:</option>
@@ -99,6 +101,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/broadcastManager:didUpdateLocationForStreamWithID:withCoordinate:">broadcastManager:didUpdateLocationForStreamWithID:withCoordinate:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/broadcastManager:didUpdateLocationForStreamWithID:withLocation:">broadcastManager:didUpdateLocationForStreamWithID:withLocation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/broadcastManager:didUploadedChunk:forStreamWithID:withError:">broadcastManager:didUploadedChunk:forStreamWithID:withError:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/broadcastManagerCameraInterfaceOrientation:">broadcastManagerCameraInterfaceOrientation:</a></span></li>
 	
@@ -187,6 +191,13 @@
 		<code><a href="#//api/name/broadcastManager:didUpdateLocationForStreamWithID:withLocation:">&ndash;&nbsp;broadcastManager:didUpdateLocationForStreamWithID:withLocation:</a></code>
 		<span class="tooltip"><p>This method is called when <a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> has successfully updated coordinate for streaming video. Stream location gets updated during broadcasting when user location has significantly changed.
 same as &ndash; (void)broadcastManager:(<a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> <em>)manager didUpdateLocationForStreamWithID:(NSString </em>)streamID withCoordinate:(CLLocationCoordinate2D)coordinate, but uses location instead of coordinate only</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/broadcastManager:didUploadedChunk:forStreamWithID:withError:">&ndash;&nbsp;broadcastManager:didUploadedChunk:forStreamWithID:withError:</a></code>
+		<span class="tooltip"><p>This method is called when <a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> has successfully uploaded video chunk on server</p></span>
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
@@ -525,6 +536,72 @@ same as &ndash; (void)broadcastManager:(<a href="../Classes/NHSBroadcastManager.
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>This method is called when <a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> has successfully updated coordinate for streaming video. Stream location gets updated during broadcasting when user location has significantly changed.
 same as &ndash; (void)broadcastManager:(<a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> <em>)manager didUpdateLocationForStreamWithID:(NSString </em>)streamID withCoordinate:(CLLocationCoordinate2D)coordinate, but uses location instead of coordinate only</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/broadcastManager:didUploadedChunk:forStreamWithID:withError:" title="broadcastManager:didUploadedChunk:forStreamWithID:withError:"></a>
+	<h3 class="subsubtitle method-title">broadcastManager:didUploadedChunk:forStreamWithID:withError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is called when <a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> has successfully uploaded video chunk on server</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)broadcastManager:(NHSBroadcastManager *)<em>manager</em> didUploadedChunk:(NSInteger)<em>number</em> forStreamWithID:(NSString *)<em>streamID</em> withError:(NSError *)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>manager</em></dt>
+			<dd><p>Current broadcast manager.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>number</em></dt>
+			<dd><p>number of chunk in HLS</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>streamID</em></dt>
+			<dd><p>ID of stream which updated it&rsquo;s location coordinate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>uploading error or nil</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method is called when <a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> has successfully uploaded video chunk on server</p>
 	</div>
 	
 	

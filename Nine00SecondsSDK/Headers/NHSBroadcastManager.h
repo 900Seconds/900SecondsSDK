@@ -266,6 +266,16 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
 - (void)broadcastManager:(NHSBroadcastManager *)manager didUpdateLocationForStreamWithID:(NSString *)streamID withLocation:(CLLocation*)location;
 
 /**
+ This method is called when NHSBroadcastManager has successfully uploaded video chunk on server
+ 
+ @param manager Current broadcast manager.
+ @param number number of chunk in HLS
+ @param streamID ID of stream which updated it's location coordinate.
+ @param error uploading error or nil
+ */
+- (void)broadcastManager:(NHSBroadcastManager *)manager didUploadedChunk:(NSInteger)number forStreamWithID:(NSString *)streamID withError:(NSError *)error;
+
+/**
  Triggered when recording error has occured.
  
  @param manager Current broadcast manager.
