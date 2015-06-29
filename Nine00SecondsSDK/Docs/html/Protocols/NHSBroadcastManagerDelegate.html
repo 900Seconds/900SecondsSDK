@@ -56,6 +56,8 @@
 	
 	<option value="//api/name/broadcastManager:didUploadedChunk:forStreamWithID:withError:">&nbsp;&nbsp;&nbsp;&nbsp;- broadcastManager:didUploadedChunk:forStreamWithID:withError:</option>
 	
+	<option value="//api/name/broadcastManager:willUpdateLocationForStreamWithID:withLocation:">&nbsp;&nbsp;&nbsp;&nbsp;- broadcastManager:willUpdateLocationForStreamWithID:withLocation:</option>
+	
 	<option value="//api/name/broadcastManagerCameraInterfaceOrientation:">&nbsp;&nbsp;&nbsp;&nbsp;- broadcastManagerCameraInterfaceOrientation:</option>
 	
 	<option value="//api/name/broadcastManagerDidFailToCreateStream:withError:">&nbsp;&nbsp;&nbsp;&nbsp;- broadcastManagerDidFailToCreateStream:withError:</option>
@@ -103,6 +105,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/broadcastManager:didUpdateLocationForStreamWithID:withLocation:">broadcastManager:didUpdateLocationForStreamWithID:withLocation:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/broadcastManager:didUploadedChunk:forStreamWithID:withError:">broadcastManager:didUploadedChunk:forStreamWithID:withError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/broadcastManager:willUpdateLocationForStreamWithID:withLocation:">broadcastManager:willUpdateLocationForStreamWithID:withLocation:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/broadcastManagerCameraInterfaceOrientation:">broadcastManagerCameraInterfaceOrientation:</a></span></li>
 	
@@ -191,6 +195,13 @@
 		<code><a href="#//api/name/broadcastManager:didUpdateLocationForStreamWithID:withLocation:">&ndash;&nbsp;broadcastManager:didUpdateLocationForStreamWithID:withLocation:</a></code>
 		<span class="tooltip"><p>This method is called when <a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> has successfully updated coordinate for streaming video. Stream location gets updated during broadcasting when user location has significantly changed.
 same as &ndash; (void)broadcastManager:(<a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> <em>)manager didUpdateLocationForStreamWithID:(NSString </em>)streamID withCoordinate:(CLLocationCoordinate2D)coordinate, but uses location instead of coordinate only</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/broadcastManager:willUpdateLocationForStreamWithID:withLocation:">&ndash;&nbsp;broadcastManager:willUpdateLocationForStreamWithID:withLocation:</a></code>
+		<span class="tooltip"><p>This method is called before <a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> ready to update coordinate for streaming video. Stream location gets updated during broadcasting when user location has significantly changed.</p></span>
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
@@ -619,6 +630,72 @@ same as &ndash; (void)broadcastManager:(<a href="../Classes/NHSBroadcastManager.
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/broadcastManager:willUpdateLocationForStreamWithID:withLocation:" title="broadcastManager:willUpdateLocationForStreamWithID:withLocation:"></a>
+	<h3 class="subsubtitle method-title">broadcastManager:willUpdateLocationForStreamWithID:withLocation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is called before <a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> ready to update coordinate for streaming video. Stream location gets updated during broadcasting when user location has significantly changed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (CLLocation *)broadcastManager:(NHSBroadcastManager *)<em>manager</em> willUpdateLocationForStreamWithID:(NSString *)<em>streamID</em> withLocation:(CLLocation *)<em>location</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>manager</em></dt>
+			<dd><p>Current broadcast manager.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>streamID</em></dt>
+			<dd><p>ID of stream which updated it&rsquo;s location coordinate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>location</em></dt>
+			<dd><p>New location coordinate of stream.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>CLLocation to be used for update. nil &ndash; do not update</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method is called before <a href="../Classes/NHSBroadcastManager.html">NHSBroadcastManager</a> ready to update coordinate for streaming video. Stream location gets updated during broadcasting when user location has significantly changed.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NHSBroadcastManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/broadcastManagerCameraInterfaceOrientation:" title="broadcastManagerCameraInterfaceOrientation:"></a>
 	<h3 class="subsubtitle method-title">broadcastManagerCameraInterfaceOrientation:</h3>
 	
@@ -845,7 +922,7 @@ same as &ndash; (void)broadcastManager:(<a href="../Classes/NHSBroadcastManager.
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 900 Seconds Oy. All rights reserved. (Last updated: 2015-05-28)</span><br />
+						<p><span class="copyright">&copy; 2015 900 Seconds Oy. All rights reserved. (Last updated: 2015-06-29)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
