@@ -131,6 +131,11 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
 - (void)toggleCamera;
 
 /**
+ Mute sound during capture.
+ */
+- (BOOL)muteSound:(BOOL)mute;
+
+/**
  This method starts recording video to local temporary file and creates a request for creating a NHSStream object on server side. If server responds with success the broadcasting starts. If a stream fails to be created then no broadcasting will take place and appropriate delegate method will be called. Broadcast manager will start uploading video to the file storage automatically. Also this method triggers the location updates which will be set as broadcast coordinates. This method will have no effect if preview is not started.
  
  When broadcasting have started the SDK starts using AVFoundation to write and compress video and ffmpeg to encode chunks of video as .ts files and then send them to the file storage. Currently all .ts files have a duration of 8 seconds. The upload process is going asynchrounously on background after each next chunk is created.
