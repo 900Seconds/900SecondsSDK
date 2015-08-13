@@ -230,7 +230,7 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
  Broadcast manager calling delegate methods to inform about broadcasting events.
  */
 @protocol NHSBroadcastManagerDelegate <NSObject>
-
+@optional
 
 /**
  Triggered after calling startBroadcast method if stream was successfully created.
