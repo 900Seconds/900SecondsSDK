@@ -610,6 +610,7 @@
 			baseConfigurationReference = A5652ACC898D108EE62B81C4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FFMPEG_PATH = ../../Submodules/FFmpeg.build;
 				GCC_PREFIX_HEADER = Nine00SecondsSDKExample/Nine00SecondsSDKExample.pch;
 				HEADER_SEARCH_PATHS = (
@@ -646,6 +647,7 @@
 			baseConfigurationReference = E7CFA67E949CEB60FDBDE983 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FFMPEG_PATH = ../../Submodules/FFmpeg.build;
 				GCC_PREFIX_HEADER = Nine00SecondsSDKExample/Nine00SecondsSDKExample.pch;
 				HEADER_SEARCH_PATHS = (

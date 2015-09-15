@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "737FDC0FC385A64110586CE3D95165E865E849D9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "33B0CBFB2E62EBC3D1967680CA1166E714CFFC3B" : 0,
+    "737FDC0FC385A64110586CE3D95165E865E849D9" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "79B9C29F-6C1D-4994-8028-B2928C435F17",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "33B0CBFB2E62EBC3D1967680CA1166E714CFFC3B" : "",
+    "737FDC0FC385A64110586CE3D95165E865E849D9" : "900Sec-lib"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Nine00SecondsSDKExample",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Nine00SecondsSDKExample\/Nine00SecondsSDKExample.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "support.denivip.ru:seconds\/seconds-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "33B0CBFB2E62EBC3D1967680CA1166E714CFFC3B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:900Seconds\/900SecondsSDK.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "737FDC0FC385A64110586CE3D95165E865E849D9"
+    }
+  ]
+}
