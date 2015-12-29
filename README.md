@@ -48,8 +48,7 @@ These are steps to set all required dependencies:
 2. To add 900Seconds SDK to the project you need to add
     - Nine00SecondsSDK.a library. It is compiled for both iPhone and iPhone Simulator architectures. So it can be used for both.
     - All NHS-prefixed header files which come with it
-    - Since SDK connects to server via SSL, you should consider IOS 9 ATS and add exceptions for *.livestreamsdk.com into your plist file
-    See http://stackoverflow.com/questions/31231696/ios-9-ats-ssl-error-with-supporting-server for details
+    - Since SDK connects to server via SSL, you should consider IOS 9 ATS and add exceptions for *.livestreamsdk.com into your plist file. See http://stackoverflow.com/questions/31231696/ios-9-ats-ssl-error-with-supporting-server for details.
     ```objective-c
     <key>NSAppTransportSecurity</key>
     <dict>
