@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NHSCapturePreviewView.h"
 
+@import UIKit;
+@import AVFoundation;
 @import CoreLocation;
 
 @class NHSStream, NHSApplication, NHSBroadcastManager, AFHTTPRequestOperation;
@@ -43,15 +44,26 @@ typedef NS_ENUM(NSUInteger, NHSStreamingQualityPreset) {
     NHSStreamingQualityPreset1280HighBitrate
 };
 
-/**
- A completion for creating stream. Contains stream created with values from server and information about error, or nil if everything is allright.
- */
-typedef void (^NHSBroadcastCreateCompletion)(NHSStream *stream, NSError *error);
+
+typedef NS_ENUM(NSUInteger, NHSStreamingFilter) {
+    NHSStreamingFilterNoFilter,
+    NHSStreamingFilterSepia,
+    NHSStreamingFilterSaturation,
+    NHSStreamingFilterColorLookup,
+    NHSStreamingFilterBlur,
+    NHSStreamingFilterVignette,
+    NHSStreamingFilterPixellate,
+    NHSStreamingLiveOverlay = 99
+};
+
+extern NSString *const kNHSApiCompletionStreamsKey;
+extern NSString *const kNHSApiCompletionViewersKey;
+extern NSString *const kNHSApiCompletionTotalsKey;
 
 /**
- A completion for fetching list of streams or viewers. Contains array of fethed items, total number of items on server and NSError instance. Total number is needed because server returns items with pagination.
+ A completion for Api calls. See kNHSApiCompletion* for possible keys
  */
-typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumberOfItems, NSError *error);
+typedef void (^NHSBroadcastApiCallCompletion)(NSDictionary* result, NSError *error);
 
 @protocol NHSBroadcastManagerDelegate;
 
@@ -70,11 +82,6 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
 @property (nonatomic, weak) id<NHSBroadcastManagerDelegate> delegate;
 
 /**
- A preview view for capturing video from camera. Before starting recording video for broadcasting the developers have to add this view to current controller view hierarchy.
- */
-@property (nonatomic, strong, readonly) NHSCapturePreviewView *previewView;
-
-/**
  Amount of bytes sent by current broadcast.
  */
 @property (nonatomic, readonly) int64_t currentStreamBytesSent;
@@ -87,6 +94,13 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
  __Important__. The maximum preset which can be used for cellular connections is NHSStreamingQualityPreset640. If you try setting higher preset broadcast manager will automatically be set to NHSStreamingQualityPreset640. The Wi-Fi connection has no restrictions.
  */
 @property (nonatomic, assign) NHSStreamingQualityPreset qualityPreset;
+
+
+/**
+ Use this property to setup default hsl stream chunk duration
+ Initial duration is kDefaultSegmentTargetDuration = 8 sec
+ */
+@property (nonatomic, assign) NSTimeInterval chunkDuration;
 
 /**
  NHSBroadcastManager is a singleton object which means it is created only once per application lifetime and then is always available. To get current broadcast manager object developers have to call this class method.
@@ -127,13 +141,40 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
 
 /**
  Call this method if you want to switch between front and back camera on the device.
+ Use AVCaptureDevicePositionUnspecified to flip camera
  */
-- (void)toggleCamera;
+- (AVCaptureDevicePosition)setupCameraInto:(AVCaptureDevicePosition)newposition;
+
+
+/**
+ Call this method if you want to switch between front and back camera on the device.
+ */
+- (void)setupCameraFilter:(NHSStreamingFilter)filterId withParams:(NSDictionary*)filterParams;
+
+/**
+ Call this method to mix UIView content into video.
+ */
+- (void)setupCameraLiveOverlay:(UIView*)liveOvl;
 
 /**
  Mute sound during capture.
  */
 - (BOOL)muteSound:(BOOL)mute;
+
+/**
+ A preview view for capturing video from camera. Before starting recording video for broadcasting the developers have to add this view to current controller view hierarchy.
+ */
+- (UIView *)createPreviewViewWithRect:(CGRect)frame;
+
+/**
+ Adding focus area animation at specified point with previously created preview view
+ */
+- (BOOL)showFocusAreaAt:(CGPoint)p withPreview:(UIView *)preview;
+
+/**
+ Hiding focus area with previously created preview view
+ */
+- (BOOL)hideFocusAreaWithPreview:(UIView *)preview;
 
 /**
  This method starts recording video to local temporary file and creates a request for creating a NHSStream object on server side. If server responds with success the broadcasting starts. If a stream fails to be created then no broadcasting will take place and appropriate delegate method will be called. Broadcast manager will start uploading video to the file storage automatically. Also this method triggers the location updates which will be set as broadcast coordinates. This method will have no effect if preview is not started.
@@ -142,6 +183,31 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
 
  */
 - (void)startBroadcasting;
+- (BOOL)isBroadcastRecording;
+
+/**
+ Call this method to pause/unpause broadcast. This method will have no effect if there is no recording session.
+ */
+- (void)pauseBroadcasting:(BOOL)enable;
+- (BOOL)isBroadcastPaused;
+
+/**
+ Call this method to stop recording new frames to temporary video file. Afterwards the current stream will upload last chunks of video and will inform server that the corresponding broadcast is stopped. This method will have no effect if there is no recording session.
+ */
+- (void)stopBroadcasting;
+
+/**
+ Call this method to cancel broadcast and remove stream/trails. This method will have no effect if there is no recording session.
+ */
+- (void)cancelBroadcasting;
+
+/**
+ This method stops video data to be transferred to preview view and removes it from superview. This method will have no effect if there is a broadcasting going.
+  @param async stop asynchronously on background thread without blocking main queue
+ */
+- (void)stopPreview:(BOOL)async;
+
+/**@name Fetching broadcasts from server*/
 
 /**
  This method requests list of users currently watching specified stream. Response contains array of NHSViewer objects and NSError.
@@ -152,25 +218,11 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
  */
 - (void)viewersForStream:(NHSStream *)stream
                untilDate:(NSDate *)untilDate
-          withCompletion:(NHSBroadcastFetchCompletion)completion;
+          withCompletion:(NHSBroadcastApiCallCompletion)completion;
 
-/**
- Call this method to recording new frames to temporary video file. Afterwards the current stream will upload last chunks of video and will inform server that the corresponding broadcast is stopped. This method will have no effect if there is no recording session.
- */
-- (void)stopBroadcasting;
-
-/**
- This method stops video data to be transferred to preview view and removes it from superview. This method will have no effect if there is a broadcasting going.
- */
-- (void)stopPreview;
-
-/**
- This method is identical to [NHSBroadcastManager stopPreview] method but is will run asynchronously on background thread without blocking main queue.
- */
-- (void)stopPreviewAsync;
-
-/**@name Fetching broadcasts from server*/
-
+- (void)updateStream:(NHSStream *)stream
+             setType:(NSString *)type
+      withCompletion:(NHSBroadcastApiCallCompletion)completion;
 /**
  Requires server side to remove a broadcast.
  
@@ -187,7 +239,7 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
  @param completion Completion has an array of NHSStream objects as returned broadcasts and NSError object with information about error.
  */
 - (void)fetchStreamsUntilDate:(NSDate *)untilDate
-               withCompletion:(NHSBroadcastFetchCompletion)completion;
+               withCompletion:(NHSBroadcastApiCallCompletion)completion;
 
 /**
  Fetching a list of broadcasts made by specific author.
@@ -198,7 +250,7 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
 */
 - (void)fetchStreamsOfAuthorWithID:(NSString *)authorID
                          untilDate:(NSDate *)untilDate
-                        completion:(NHSBroadcastFetchCompletion)completion;
+                        completion:(NHSBroadcastApiCallCompletion)completion;
 
 /**
  Fetching a list of broadcasts filtered by coordinate, proximity and age.
@@ -212,7 +264,7 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
 - (AFHTTPRequestOperation *)fetchStreamsNearCoordinate:(CLLocationCoordinate2D)coordinate
                                             withRadius:(CGFloat)radiusInMeters
                                              untilDate:(NSDate *)date
-                                        withCompletion:(NHSBroadcastFetchCompletion)completion;
+                                        withCompletion:(NHSBroadcastApiCallCompletion)completion;
 
 /**@name Playing broadcasts*/
 
@@ -253,16 +305,6 @@ typedef void (^NHSBroadcastFetchCompletion)(NSArray *array, NSInteger totalNumbe
 
 /**
  This method is called when NHSBroadcastManager has successfully updated coordinate for streaming video. Stream location gets updated during broadcasting when user location has significantly changed.
- 
- @param manager Current broadcast manager.
- @param streamID ID of stream which updated it's location coordinate.
- @param coordinate New location coordinate of stream.
- */
-- (void)broadcastManager:(NHSBroadcastManager *)manager didUpdateLocationForStreamWithID:(NSString *)streamID withCoordinate:(CLLocationCoordinate2D)coordinate;
-
-/**
- This method is called when NHSBroadcastManager has successfully updated coordinate for streaming video. Stream location gets updated during broadcasting when user location has significantly changed.
- same as - (void)broadcastManager:(NHSBroadcastManager *)manager didUpdateLocationForStreamWithID:(NSString *)streamID withCoordinate:(CLLocationCoordinate2D)coordinate, but uses location instead of coordinate only
  
  @param manager Current broadcast manager.
  @param streamID ID of stream which updated it's location coordinate.

@@ -1,0 +1,722 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		30065C061C19A80000A0DA9D /* libNine00SecondsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30065C051C19A80000A0DA9D /* libNine00SecondsSDK.a */; };
+		306E7C5F1C32BB180039A3A0 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 306E7C5E1C32BB180039A3A0 /* lookup_amatorka.png */; };
+		30DB5A441C189AB800771FCD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB58051C184F8000771FCD /* OpenGLES.framework */; };
+		30DB5A451C189AC200771FCD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB58071C184F8A00771FCD /* AVFoundation.framework */; };
+		30DB5A461C189ACC00771FCD /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB58031C184F7700771FCD /* CoreVideo.framework */; };
+		30DB5A471C189AD100771FCD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB58011C184F6B00771FCD /* CoreMedia.framework */; };
+		30DB5A4B1C189F9F00771FCD /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB5A481C189F9F00771FCD /* AWSCore.framework */; };
+		30DB5A4D1C189F9F00771FCD /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB5A491C189F9F00771FCD /* AWSS3.framework */; };
+		7422F6CB1AD81358002B1661 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E8D17D1A482E4300E646AB /* EXTScope.m */; };
+		7422F6D31AD81358002B1661 /* DVGStreamsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869351711A4D4D0A00FF8532 /* DVGStreamsMapViewController.m */; };
+		7422F6D41AD81358002B1661 /* DVGFeatureListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7422F6991AD8008F002B1661 /* DVGFeatureListTableViewController.m */; };
+		7422F6D51AD81358002B1661 /* EXTSelectorChecking.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E8D17F1A482E4300E646AB /* EXTSelectorChecking.m */; };
+		7422F6D71AD81358002B1661 /* DVGClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 869351691A4D4D0A00FF8532 /* DVGClusterAnnotationView.m */; };
+		7422F6DD1AD81358002B1661 /* DVGMKAnnotationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 869351781A4D4D5700FF8532 /* DVGMKAnnotationUtilities.m */; };
+		7422F6DE1AD81358002B1661 /* DVGStreamsMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8693516F1A4D4D0A00FF8532 /* DVGStreamsMapAnnotationView.m */; };
+		7422F6DF1AD81358002B1661 /* DVGStreamSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ACB7A41A4C6A9B00900C67 /* DVGStreamSelectionViewController.m */; };
+		7422F6E11AD81358002B1661 /* NHSViewer+MapKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C8700A1A4CE2B2008CCEC0 /* NHSViewer+MapKit.m */; };
+		7422F6E41AD81358002B1661 /* DVGCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E8D1981A4AECE500E646AB /* DVGCameraViewController.m */; };
+		7422F6E71AD81358002B1661 /* DVGStreamAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8693516B1A4D4D0A00FF8532 /* DVGStreamAnnotationView.m */; };
+		7422F6E81AD81358002B1661 /* NHSStream+MapKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C870041A4CE2B2008CCEC0 /* NHSStream+MapKit.m */; };
+		7422F6EA1AD81358002B1661 /* DVGStreamOverlayRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8693516D1A4D4D0A00FF8532 /* DVGStreamOverlayRenderer.m */; };
+		7422F6F11AD81358002B1661 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E8D11C1A44401700E646AB /* AppDelegate.m */; };
+		7422F6F21AD81358002B1661 /* DVGStreamsDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ACB7A21A4C6A9B00900C67 /* DVGStreamsDataController.m */; };
+		7422F6F31AD81358002B1661 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E8D1191A44401700E646AB /* main.m */; };
+		7422F6F81AD81358002B1661 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ACB79D1A4C21EF00900C67 /* CoreLocation.framework */; };
+		7422F6F91AD81358002B1661 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E8D1751A482E2700E646AB /* libavutil.a */; };
+		7422F6FA1AD81358002B1661 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25201B60F367C42A539AE687 /* libPods.a */; };
+		7422F6FB1AD81358002B1661 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E8D1731A482E2700E646AB /* libavdevice.a */; };
+		7422F6FC1AD81358002B1661 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E8D1741A482E2700E646AB /* libavformat.a */; };
+		7422F6FD1AD81358002B1661 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E8D1721A482E2700E646AB /* libavcodec.a */; };
+		7422F6FF1AD81358002B1661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E8D1211A44401700E646AB /* Main.storyboard */; };
+		7422F7001AD81358002B1661 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E8D1261A44401700E646AB /* LaunchScreen.xib */; };
+		7422F7011AD81358002B1661 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74E8D1241A44401700E646AB /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		25201B60F367C42A539AE687 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		30065C051C19A80000A0DA9D /* libNine00SecondsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNine00SecondsSDK.a; path = ../Nine00SecondsSDK/Product/libNine00SecondsSDK.a; sourceTree = "<group>"; };
+		306E7C5E1C32BB180039A3A0 /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_amatorka.png; sourceTree = "<group>"; };
+		30DB58011C184F6B00771FCD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		30DB58031C184F7700771FCD /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		30DB58051C184F8000771FCD /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		30DB58071C184F8A00771FCD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		30DB58091C184F9300771FCD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		30DB5A361C1872BD00771FCD /* NHSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHSApplication.h; path = ../Nine00SecondsSDK/Nine00SecondsSDK/public/NHSApplication.h; sourceTree = "<group>"; };
+		30DB5A371C1872BD00771FCD /* NHSBroadcastManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHSBroadcastManager.h; path = ../Nine00SecondsSDK/Nine00SecondsSDK/public/NHSBroadcastManager.h; sourceTree = "<group>"; };
+		30DB5A381C1872BD00771FCD /* NHSStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHSStream.h; path = ../Nine00SecondsSDK/Nine00SecondsSDK/public/NHSStream.h; sourceTree = "<group>"; };
+		30DB5A391C1872BD00771FCD /* NHSStreamPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHSStreamPlayerController.h; path = ../Nine00SecondsSDK/Nine00SecondsSDK/public/NHSStreamPlayerController.h; sourceTree = "<group>"; };
+		30DB5A3B1C1872BD00771FCD /* NHSViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHSViewer.h; path = ../Nine00SecondsSDK/Nine00SecondsSDK/public/NHSViewer.h; sourceTree = "<group>"; };
+		30DB5A3C1C1872BD00771FCD /* Nine00SecondsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Nine00SecondsSDK.h; path = ../Nine00SecondsSDK/Nine00SecondsSDK/public/Nine00SecondsSDK.h; sourceTree = "<group>"; };
+		30DB5A3D1C1872BD00771FCD /* NSDate+NHSUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+NHSUtilities.h"; path = "../Nine00SecondsSDK/Nine00SecondsSDK/public/NSDate+NHSUtilities.h"; sourceTree = "<group>"; };
+		30DB5A481C189F9F00771FCD /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
+		30DB5A491C189F9F00771FCD /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
+		7422F6981AD8008F002B1661 /* DVGFeatureListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVGFeatureListTableViewController.h; sourceTree = "<group>"; };
+		7422F6991AD8008F002B1661 /* DVGFeatureListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVGFeatureListTableViewController.m; sourceTree = "<group>"; };
+		7422F7061AD81358002B1661 /* Nine00SDKTesterLibSource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nine00SDKTesterLibSource.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74ACB79D1A4C21EF00900C67 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		74ACB7A11A4C6A9B00900C67 /* DVGStreamsDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVGStreamsDataController.h; sourceTree = "<group>"; };
+		74ACB7A21A4C6A9B00900C67 /* DVGStreamsDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVGStreamsDataController.m; sourceTree = "<group>"; };
+		74ACB7A31A4C6A9B00900C67 /* DVGStreamSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVGStreamSelectionViewController.h; sourceTree = "<group>"; };
+		74ACB7A41A4C6A9B00900C67 /* DVGStreamSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVGStreamSelectionViewController.m; sourceTree = "<group>"; };
+		74E8D1181A44401700E646AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74E8D1191A44401700E646AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		74E8D11B1A44401700E646AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		74E8D11C1A44401700E646AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		74E8D1221A44401700E646AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		74E8D1241A44401700E646AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		74E8D1271A44401700E646AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		74E8D16E1A482DC700E646AB /* Nine00SDKTester.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nine00SDKTester.pch; sourceTree = "<group>"; };
+		74E8D1721A482E2700E646AB /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = ../../Submodules/FFmpeg.build/lib/libavcodec.a; sourceTree = "<group>"; };
+		74E8D1731A482E2700E646AB /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = ../../Submodules/FFmpeg.build/lib/libavdevice.a; sourceTree = "<group>"; };
+		74E8D1741A482E2700E646AB /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = ../../Submodules/FFmpeg.build/lib/libavformat.a; sourceTree = "<group>"; };
+		74E8D1751A482E2700E646AB /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = ../../Submodules/FFmpeg.build/lib/libavutil.a; sourceTree = "<group>"; };
+		74E8D17A1A482E4300E646AB /* extobjc_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = extobjc_Prefix.pch; path = ../../Submodules/libextobjc/extobjc/extobjc_Prefix.pch; sourceTree = "<group>"; };
+		74E8D17B1A482E4300E646AB /* extobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = extobjc.h; path = ../../Submodules/libextobjc/extobjc/extobjc.h; sourceTree = "<group>"; };
+		74E8D17C1A482E4300E646AB /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTScope.h; path = ../../Submodules/libextobjc/extobjc/EXTScope.h; sourceTree = "<group>"; };
+		74E8D17D1A482E4300E646AB /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXTScope.m; path = ../../Submodules/libextobjc/extobjc/EXTScope.m; sourceTree = "<group>"; };
+		74E8D17E1A482E4300E646AB /* EXTSelectorChecking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTSelectorChecking.h; path = ../../Submodules/libextobjc/extobjc/EXTSelectorChecking.h; sourceTree = "<group>"; };
+		74E8D17F1A482E4300E646AB /* EXTSelectorChecking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXTSelectorChecking.m; path = ../../Submodules/libextobjc/extobjc/EXTSelectorChecking.m; sourceTree = "<group>"; };
+		74E8D1801A482E4300E646AB /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = metamacros.h; path = ../../Submodules/libextobjc/extobjc/metamacros.h; sourceTree = "<group>"; };
+		74E8D1831A482E5700E646AB /* EXTKeyPathCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTKeyPathCoding.h; path = ../../Submodules/libextobjc/extobjc/EXTKeyPathCoding.h; sourceTree = "<group>"; };
+		74E8D1971A4AECE500E646AB /* DVGCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVGCameraViewController.h; sourceTree = "<group>"; };
+		74E8D1981A4AECE500E646AB /* DVGCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVGCameraViewController.m; sourceTree = "<group>"; };
+		869351681A4D4D0A00FF8532 /* DVGClusterAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVGClusterAnnotationView.h; sourceTree = "<group>"; };
+		869351691A4D4D0A00FF8532 /* DVGClusterAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVGClusterAnnotationView.m; sourceTree = "<group>"; };
+		8693516A1A4D4D0A00FF8532 /* DVGStreamAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVGStreamAnnotationView.h; sourceTree = "<group>"; };
+		8693516B1A4D4D0A00FF8532 /* DVGStreamAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVGStreamAnnotationView.m; sourceTree = "<group>"; };
+		8693516C1A4D4D0A00FF8532 /* DVGStreamOverlayRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVGStreamOverlayRenderer.h; sourceTree = "<group>"; };
+		8693516D1A4D4D0A00FF8532 /* DVGStreamOverlayRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVGStreamOverlayRenderer.m; sourceTree = "<group>"; };
+		8693516E1A4D4D0A00FF8532 /* DVGStreamsMapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVGStreamsMapAnnotationView.h; sourceTree = "<group>"; };
+		8693516F1A4D4D0A00FF8532 /* DVGStreamsMapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVGStreamsMapAnnotationView.m; sourceTree = "<group>"; };
+		869351701A4D4D0A00FF8532 /* DVGStreamsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVGStreamsMapViewController.h; sourceTree = "<group>"; };
+		869351711A4D4D0A00FF8532 /* DVGStreamsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVGStreamsMapViewController.m; sourceTree = "<group>"; };
+		869351771A4D4D5700FF8532 /* DVGMKAnnotationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVGMKAnnotationUtilities.h; sourceTree = "<group>"; };
+		869351781A4D4D5700FF8532 /* DVGMKAnnotationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVGMKAnnotationUtilities.m; sourceTree = "<group>"; };
+		86C870031A4CE2B2008CCEC0 /* NHSStream+MapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NHSStream+MapKit.h"; sourceTree = "<group>"; };
+		86C870041A4CE2B2008CCEC0 /* NHSStream+MapKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NHSStream+MapKit.m"; sourceTree = "<group>"; };
+		86C870091A4CE2B2008CCEC0 /* NHSViewer+MapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NHSViewer+MapKit.h"; sourceTree = "<group>"; };
+		86C8700A1A4CE2B2008CCEC0 /* NHSViewer+MapKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NHSViewer+MapKit.m"; sourceTree = "<group>"; };
+		A5652ACC898D108EE62B81C4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E7CFA67E949CEB60FDBDE983 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7422F6F61AD81358002B1661 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30065C061C19A80000A0DA9D /* libNine00SecondsSDK.a in Frameworks */,
+				30DB5A471C189AD100771FCD /* CoreMedia.framework in Frameworks */,
+				30DB5A461C189ACC00771FCD /* CoreVideo.framework in Frameworks */,
+				30DB5A451C189AC200771FCD /* AVFoundation.framework in Frameworks */,
+				30DB5A441C189AB800771FCD /* OpenGLES.framework in Frameworks */,
+				7422F6F81AD81358002B1661 /* CoreLocation.framework in Frameworks */,
+				30DB5A4B1C189F9F00771FCD /* AWSCore.framework in Frameworks */,
+				7422F6F91AD81358002B1661 /* libavutil.a in Frameworks */,
+				7422F6FA1AD81358002B1661 /* libPods.a in Frameworks */,
+				30DB5A4D1C189F9F00771FCD /* AWSS3.framework in Frameworks */,
+				7422F6FB1AD81358002B1661 /* libavdevice.a in Frameworks */,
+				7422F6FC1AD81358002B1661 /* libavformat.a in Frameworks */,
+				7422F6FD1AD81358002B1661 /* libavcodec.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6A95E88C0F69454493E1DACE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5652ACC898D108EE62B81C4 /* Pods.debug.xcconfig */,
+				E7CFA67E949CEB60FDBDE983 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		74E8D10B1A44401700E646AB = {
+			isa = PBXGroup;
+			children = (
+				74E8D1161A44401700E646AB /* Nine00SecondsSDKExample */,
+				74E8D13D1A4441EF00E646AB /* Vendor */,
+				74E8D1151A44401700E646AB /* Products */,
+				6A95E88C0F69454493E1DACE /* Pods */,
+				AC96C032B819A9FC346BEA46 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		74E8D1151A44401700E646AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7422F7061AD81358002B1661 /* Nine00SDKTesterLibSource.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74E8D1161A44401700E646AB /* Nine00SecondsSDKExample */ = {
+			isa = PBXGroup;
+			children = (
+				86C870121A4CE2E4008CCEC0 /* Helpers */,
+				86C8700F1A4CE2B6008CCEC0 /* View Controllers */,
+				74E8D11B1A44401700E646AB /* AppDelegate.h */,
+				74E8D11C1A44401700E646AB /* AppDelegate.m */,
+				74E8D1171A44401700E646AB /* Supporting Files */,
+			);
+			path = Nine00SecondsSDKExample;
+			sourceTree = "<group>";
+		};
+		74E8D1171A44401700E646AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				74E8D1261A44401700E646AB /* LaunchScreen.xib */,
+				74E8D1241A44401700E646AB /* Images.xcassets */,
+				74E8D1211A44401700E646AB /* Main.storyboard */,
+				306E7C5E1C32BB180039A3A0 /* lookup_amatorka.png */,
+				74E8D1181A44401700E646AB /* Info.plist */,
+				74E8D1191A44401700E646AB /* main.m */,
+				74E8D16E1A482DC700E646AB /* Nine00SDKTester.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		74E8D13D1A4441EF00E646AB /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				74E8D1711A482E0F00E646AB /* extobjc */,
+				74E8D1701A482E0B00E646AB /* ffmpeg */,
+				74E8D16F1A482DE300E646AB /* Nine00SecondsSDK */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		74E8D16F1A482DE300E646AB /* Nine00SecondsSDK */ = {
+			isa = PBXGroup;
+			children = (
+				30DB5A361C1872BD00771FCD /* NHSApplication.h */,
+				30DB5A371C1872BD00771FCD /* NHSBroadcastManager.h */,
+				30DB5A381C1872BD00771FCD /* NHSStream.h */,
+				30DB5A391C1872BD00771FCD /* NHSStreamPlayerController.h */,
+				30DB5A3B1C1872BD00771FCD /* NHSViewer.h */,
+				30DB5A3C1C1872BD00771FCD /* Nine00SecondsSDK.h */,
+				30DB5A3D1C1872BD00771FCD /* NSDate+NHSUtilities.h */,
+			);
+			name = Nine00SecondsSDK;
+			sourceTree = "<group>";
+		};
+		74E8D1701A482E0B00E646AB /* ffmpeg */ = {
+			isa = PBXGroup;
+			children = (
+				74E8D1721A482E2700E646AB /* libavcodec.a */,
+				74E8D1731A482E2700E646AB /* libavdevice.a */,
+				74E8D1741A482E2700E646AB /* libavformat.a */,
+				74E8D1751A482E2700E646AB /* libavutil.a */,
+			);
+			name = ffmpeg;
+			sourceTree = "<group>";
+		};
+		74E8D1711A482E0F00E646AB /* extobjc */ = {
+			isa = PBXGroup;
+			children = (
+				74E8D1831A482E5700E646AB /* EXTKeyPathCoding.h */,
+				74E8D17A1A482E4300E646AB /* extobjc_Prefix.pch */,
+				74E8D17B1A482E4300E646AB /* extobjc.h */,
+				74E8D17C1A482E4300E646AB /* EXTScope.h */,
+				74E8D17D1A482E4300E646AB /* EXTScope.m */,
+				74E8D17E1A482E4300E646AB /* EXTSelectorChecking.h */,
+				74E8D17F1A482E4300E646AB /* EXTSelectorChecking.m */,
+				74E8D1801A482E4300E646AB /* metamacros.h */,
+			);
+			name = extobjc;
+			sourceTree = "<group>";
+		};
+		869351671A4D4CF400FF8532 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				869351681A4D4D0A00FF8532 /* DVGClusterAnnotationView.h */,
+				869351691A4D4D0A00FF8532 /* DVGClusterAnnotationView.m */,
+				8693516A1A4D4D0A00FF8532 /* DVGStreamAnnotationView.h */,
+				8693516B1A4D4D0A00FF8532 /* DVGStreamAnnotationView.m */,
+				8693516C1A4D4D0A00FF8532 /* DVGStreamOverlayRenderer.h */,
+				8693516D1A4D4D0A00FF8532 /* DVGStreamOverlayRenderer.m */,
+				8693516E1A4D4D0A00FF8532 /* DVGStreamsMapAnnotationView.h */,
+				8693516F1A4D4D0A00FF8532 /* DVGStreamsMapAnnotationView.m */,
+				869351701A4D4D0A00FF8532 /* DVGStreamsMapViewController.h */,
+				869351711A4D4D0A00FF8532 /* DVGStreamsMapViewController.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		86C8700F1A4CE2B6008CCEC0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				869351671A4D4CF400FF8532 /* Map */,
+				86C870131A4CE2F7008CCEC0 /* Camera */,
+				86C870111A4CE2D3008CCEC0 /* Streams List */,
+				7422F6981AD8008F002B1661 /* DVGFeatureListTableViewController.h */,
+				7422F6991AD8008F002B1661 /* DVGFeatureListTableViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		86C870111A4CE2D3008CCEC0 /* Streams List */ = {
+			isa = PBXGroup;
+			children = (
+				74ACB7A11A4C6A9B00900C67 /* DVGStreamsDataController.h */,
+				74ACB7A21A4C6A9B00900C67 /* DVGStreamsDataController.m */,
+				74ACB7A31A4C6A9B00900C67 /* DVGStreamSelectionViewController.h */,
+				74ACB7A41A4C6A9B00900C67 /* DVGStreamSelectionViewController.m */,
+			);
+			name = "Streams List";
+			sourceTree = "<group>";
+		};
+		86C870121A4CE2E4008CCEC0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				869351771A4D4D5700FF8532 /* DVGMKAnnotationUtilities.h */,
+				869351781A4D4D5700FF8532 /* DVGMKAnnotationUtilities.m */,
+				86C870031A4CE2B2008CCEC0 /* NHSStream+MapKit.h */,
+				86C870041A4CE2B2008CCEC0 /* NHSStream+MapKit.m */,
+				86C870091A4CE2B2008CCEC0 /* NHSViewer+MapKit.h */,
+				86C8700A1A4CE2B2008CCEC0 /* NHSViewer+MapKit.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		86C870131A4CE2F7008CCEC0 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				74E8D1971A4AECE500E646AB /* DVGCameraViewController.h */,
+				74E8D1981A4AECE500E646AB /* DVGCameraViewController.m */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		AC96C032B819A9FC346BEA46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30065C051C19A80000A0DA9D /* libNine00SecondsSDK.a */,
+				30DB5A481C189F9F00771FCD /* AWSCore.framework */,
+				30DB5A491C189F9F00771FCD /* AWSS3.framework */,
+				30DB58091C184F9300771FCD /* QuartzCore.framework */,
+				30DB58071C184F8A00771FCD /* AVFoundation.framework */,
+				30DB58051C184F8000771FCD /* OpenGLES.framework */,
+				30DB58031C184F7700771FCD /* CoreVideo.framework */,
+				30DB58011C184F6B00771FCD /* CoreMedia.framework */,
+				74ACB79D1A4C21EF00900C67 /* CoreLocation.framework */,
+				25201B60F367C42A539AE687 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7422F6C51AD81358002B1661 /* Nine00SDKTesterSource */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7422F7031AD81358002B1661 /* Build configuration list for PBXNativeTarget "Nine00SDKTesterSource" */;
+			buildPhases = (
+				7422F6C61AD81358002B1661 /* Check Pods Manifest.lock */,
+				7422F6C71AD81358002B1661 /* Sources */,
+				7422F6F61AD81358002B1661 /* Frameworks */,
+				7422F6FE1AD81358002B1661 /* Resources */,
+				7422F7021AD81358002B1661 /* Copy Pods Resources */,
+				4020585C97F26D9F999BAD33 /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nine00SDKTesterSource;
+			productName = Nine00SecondsSDKExample;
+			productReference = 7422F7061AD81358002B1661 /* Nine00SDKTesterLibSource.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		74E8D10C1A44401700E646AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "DENIVIP Group";
+				TargetAttributes = {
+					7422F6C51AD81358002B1661 = {
+						DevelopmentTeam = VVU5C37FM9;
+					};
+				};
+			};
+			buildConfigurationList = 74E8D10F1A44401700E646AB /* Build configuration list for PBXProject "Nine00SDKTester" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 74E8D10B1A44401700E646AB;
+			productRefGroup = 74E8D1151A44401700E646AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7422F6C51AD81358002B1661 /* Nine00SDKTesterSource */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7422F6FE1AD81358002B1661 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7422F6FF1AD81358002B1661 /* Main.storyboard in Resources */,
+				7422F7001AD81358002B1661 /* LaunchScreen.xib in Resources */,
+				7422F7011AD81358002B1661 /* Images.xcassets in Resources */,
+				306E7C5F1C32BB180039A3A0 /* lookup_amatorka.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4020585C97F26D9F999BAD33 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7422F6C61AD81358002B1661 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7422F7021AD81358002B1661 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7422F6C71AD81358002B1661 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7422F6CB1AD81358002B1661 /* EXTScope.m in Sources */,
+				7422F6D31AD81358002B1661 /* DVGStreamsMapViewController.m in Sources */,
+				7422F6D41AD81358002B1661 /* DVGFeatureListTableViewController.m in Sources */,
+				7422F6D51AD81358002B1661 /* EXTSelectorChecking.m in Sources */,
+				7422F6D71AD81358002B1661 /* DVGClusterAnnotationView.m in Sources */,
+				7422F6DD1AD81358002B1661 /* DVGMKAnnotationUtilities.m in Sources */,
+				7422F6DE1AD81358002B1661 /* DVGStreamsMapAnnotationView.m in Sources */,
+				7422F6DF1AD81358002B1661 /* DVGStreamSelectionViewController.m in Sources */,
+				7422F6E11AD81358002B1661 /* NHSViewer+MapKit.m in Sources */,
+				7422F6E41AD81358002B1661 /* DVGCameraViewController.m in Sources */,
+				7422F6E71AD81358002B1661 /* DVGStreamAnnotationView.m in Sources */,
+				7422F6E81AD81358002B1661 /* NHSStream+MapKit.m in Sources */,
+				7422F6EA1AD81358002B1661 /* DVGStreamOverlayRenderer.m in Sources */,
+				7422F6F11AD81358002B1661 /* AppDelegate.m in Sources */,
+				7422F6F21AD81358002B1661 /* DVGStreamsDataController.m in Sources */,
+				7422F6F31AD81358002B1661 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		74E8D1211A44401700E646AB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74E8D1221A44401700E646AB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		74E8D1261A44401700E646AB /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74E8D1271A44401700E646AB /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7422F7041AD81358002B1661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5652ACC898D108EE62B81C4 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FFMPEG_PATH = ../../Submodules/FFmpeg.build;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = Nine00SecondsSDKExample/Nine00SDKTester.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DVG_EXTERNAL_SOURCE=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/AWSiOSSDKv2\"",
+					"\"${PODS_ROOT}/Headers/Public/Bolts\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/GZIP\"",
+					"\"${PODS_ROOT}/Headers/Public/Mantle\"",
+					"\"${PODS_ROOT}/Headers/Public/Reachability\"",
+					"\"${PODS_ROOT}/Headers/Public/TMCache\"",
+					"\"${PODS_ROOT}/Headers/Public/UICKeyChainStore\"",
+					"\"${PODS_ROOT}/Headers/Public/XMLDictionary\"",
+					../Nine00SecondsSDK/Nine00SecondsSDK/public,
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Nine00SecondsSDKExample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					../Nine00SecondsSDK/Product,
+					../../Submodules/FFmpeg.build/lib,
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"CocoaLumberjack\"",
+					"-l\"kingpin\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_NAME = Nine00SDKTesterLibSource;
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "$(FFMPEG_PATH)/include/$(CURRENT_ARCH) ../../Submodules/libextobjc ../../Submodules/FFmpeg";
+			};
+			name = Debug;
+		};
+		7422F7051AD81358002B1661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7CFA67E949CEB60FDBDE983 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FFMPEG_PATH = ../../Submodules/FFmpeg.build;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = Nine00SecondsSDKExample/Nine00SDKTester.pch;
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/AWSiOSSDKv2\"",
+					"\"${PODS_ROOT}/Headers/Public/Bolts\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/GZIP\"",
+					"\"${PODS_ROOT}/Headers/Public/Mantle\"",
+					"\"${PODS_ROOT}/Headers/Public/Reachability\"",
+					"\"${PODS_ROOT}/Headers/Public/TMCache\"",
+					"\"${PODS_ROOT}/Headers/Public/UICKeyChainStore\"",
+					"\"${PODS_ROOT}/Headers/Public/XMLDictionary\"",
+					../Nine00SecondsSDK/Nine00SecondsSDK/public,
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Nine00SecondsSDKExample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					../Nine00SecondsSDK/Product,
+					../../Submodules/FFmpeg.build/lib,
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"CocoaLumberjack\"",
+					"-l\"kingpin\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_NAME = Nine00SDKTesterLibSource;
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "$(FFMPEG_PATH)/include/$(CURRENT_ARCH) ../../Submodules/libextobjc ../../Submodules/FFmpeg";
+			};
+			name = Release;
+		};
+		74E8D1351A44401700E646AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		74E8D1361A44401700E646AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7422F7031AD81358002B1661 /* Build configuration list for PBXNativeTarget "Nine00SDKTesterSource" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7422F7041AD81358002B1661 /* Debug */,
+				7422F7051AD81358002B1661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74E8D10F1A44401700E646AB /* Build configuration list for PBXProject "Nine00SDKTester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74E8D1351A44401700E646AB /* Debug */,
+				74E8D1361A44401700E646AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 74E8D10C1A44401700E646AB /* Project object */;
+}

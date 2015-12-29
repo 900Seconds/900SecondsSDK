@@ -1,0 +1,26 @@
+//
+//  Nine00SecondsSDKExample.pch
+//  Nine00SecondsSDKExample
+//
+//  Created by Mikhail Grushin on 22.12.14.
+//  Copyright (c) 2014 DENIVIP Group. All rights reserved.
+//
+
+#ifndef Nine00SecondsSDKExample_Nine00SecondsSDKExample_pch
+#define Nine00SecondsSDKExample_Nine00SecondsSDKExample_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+
+#import "extobjc/EXTKeyPathCoding.h"
+#import "extobjc/EXTSelectorChecking.h"
+#import "extobjc/EXTScope.h"
+#import "CocoaLumberjack/DDLog.h"
+//#import "CocoaLumberjack/DDLogMacros.h"
+//#import "DVAssertionsAndLogging.h"
+
+#endif
+
+#endif

@@ -3,7 +3,7 @@
 //  NineHundredSeconds
 //
 //  Created by Nikolay Morev on 23.12.14.
-//  Copyright (c) 2014 900 Seconds Oy. All rights reserved.
+//  Copyright (c) 2014 DENIVIP Group. All rights reserved.
 //
 
 #import "DVGStreamsDataController.h"
@@ -19,25 +19,28 @@
 {
     if (self.type == DVGStreamsDataControllerTypeRecent) {
         @weakify(self);
-        [[NHSBroadcastManager sharedManager] fetchStreamsUntilDate:nil withCompletion:^(NSArray *streams, NSInteger totalNumber, NSError *error) {
+        [[NHSBroadcastManager sharedManager] fetchStreamsUntilDate:nil
+                                                    withCompletion:^(NSDictionary* result, NSError *error) {
             @strongify(self);
+            NSArray* streams = [result objectForKey:kNHSApiCompletionStreamsKey];
             if (streams) {
                 self.streams = streams;
             }
             else {
                 // To hide activity indicator
-                [self.delegate streamsDataControllerDidUpdateStreams:self];
+                self.streams = @[];
             }
         }];
     } else {
         [[NHSBroadcastManager sharedManager] fetchStreamsNearCoordinate:self.coordinate
                                                              withRadius:self.radius
                                                               untilDate:self.sinceDate
-                                                         withCompletion:^(NSArray *streamsArray, NSInteger totalNumber, NSError *error) {
-                                                             if (streamsArray.count) {
-                                                                 self.streams = streamsArray;
+                                                         withCompletion:^(NSDictionary* result, NSError *error) {
+                                                             NSArray* streams = [result objectForKey:kNHSApiCompletionStreamsKey];
+                                                             if (streams.count) {
+                                                                 self.streams = streams;
                                                              } else {
-                                                                 [self.delegate streamsDataControllerDidUpdateStreams:self];
+                                                                 self.streams = @[];
                                                              }
         }];
     }

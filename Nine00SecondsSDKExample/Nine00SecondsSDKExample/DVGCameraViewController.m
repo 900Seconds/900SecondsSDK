@@ -3,7 +3,7 @@
 //  Nine00SecondsSDKExample
 //
 //  Created by Mikhail Grushin on 24.12.14.
-//  Copyright (c) 2014 900 Seconds Oy. All rights reserved.
+//  Copyright (c) 2014 DENIVIP Group. All rights reserved.
 //
 
 #import "DVGCameraViewController.h"
@@ -15,8 +15,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *uploadClock;
 
 @property (nonatomic, strong) NHSBroadcastManager *broadcastManager;
-@property (nonatomic, strong) NHSCapturePreviewView *previewView;
+@property (nonatomic, strong) UIView *previewView;
 
+@property (weak, nonatomic) IBOutlet UIButton *filterButton;
 @property (nonatomic, strong) NHSStream *stream;
 @property (nonatomic, strong) NSTimer *uploadTimer;
 @end
@@ -30,9 +31,9 @@
     self.title = @"Camera";
     
     self.broadcastManager = [NHSBroadcastManager sharedManager];
-    self.broadcastManager.delegate = self;
     self.broadcastManager.qualityPreset = NHSStreamingQualityPreset640HighBitrate;
-    self.previewView = self.broadcastManager.previewView;
+    self.broadcastManager.delegate = self;
+    self.previewView = [self.broadcastManager createPreviewViewWithRect:self.view.bounds];
     [self.view insertSubview:self.previewView belowSubview:self.recButton];
     
     UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToFocus:)];
@@ -52,7 +53,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    [[NHSBroadcastManager sharedManager] stopPreview];
+    [self.broadcastManager stopPreview:NO];
     self.broadcastManager.delegate = nil;
     
     [self.uploadTimer invalidate];
@@ -65,15 +66,33 @@
 }
 
 - (void)dealloc {
-    [[NHSBroadcastManager sharedManager] stopPreview];
-    
+    [self.broadcastManager stopPreview:YES];
     [self.uploadTimer invalidate];
     self.uploadTimer = nil;
 }
 
 #pragma mark - Broadcasting actions
+- (IBAction)toggleFilter:(id)sender {
+    static int scotcher = 0;
+    NSArray* validFilters = @[
+                          @[@"No filter",@(NHSStreamingFilterNoFilter), [NSNull null]],
+                          @[@"Sepia",@(NHSStreamingFilterSepia), [NSNull null]],
+                          @[@"Black`n`White",@(NHSStreamingFilterSaturation), [NSNull null]],
+                          @[@"Colorized",@(NHSStreamingFilterColorLookup), @{@"image":[UIImage imageNamed:@"lookup_amatorka.png"]}],
+                          @[@"Blur",@(NHSStreamingFilterBlur), @{@"blurRadiusAsFractionOfImageWidth":@(0.02)}],
+                          @[@"Vignette",@(NHSStreamingFilterVignette), @{@"vignetteStart":@(0.3), @"vignetteEnd":@(0.75)}],
+                          @[@"Pixellate",@(NHSStreamingFilterPixellate), @{@"fractionalWidthOfAPixel":@(0.02)}]
+                          ];
+    scotcher = (scotcher+1)%[validFilters count];
+    NHSStreamingFilter filter = [[[validFilters objectAtIndex:scotcher] objectAtIndex:1] intValue];
+    NSDictionary* params = [[validFilters objectAtIndex:scotcher] objectAtIndex:2];
+    [self.filterButton setTitle:[[validFilters objectAtIndex:scotcher] objectAtIndex:0] forState:UIControlStateNormal];
+    [self.broadcastManager setupCameraFilter:filter withParams:(id)params == [NSNull null]?nil:params];
+}
 
 - (void)startBroadcast {
+    self.sentLabel.text = @"KB sent : 0";
+    self.uploadClock.text = @"Starting...";
     [[NHSBroadcastManager sharedManager] startBroadcasting];
 }
 
@@ -134,12 +153,13 @@
 - (void)uploadTimerAction {
     if (self.uploadClock.alpha) {
         NSTimeInterval time = [[NSDate date] timeIntervalSinceDate:self.stream.createdAt];
-        
-        int seconds = ((int)time)%60;
-        int minutes = time/60;
-        int milliseconds = (int)((time - minutes - seconds)*100);
-        
-        self.uploadClock.text = [NSString stringWithFormat:@"%02d:%02d:%02d", minutes, seconds, milliseconds];
+        if(time > 0){
+            int seconds = ((int)time)%60;
+            int minutes = time/60;
+            //int milliseconds = (int)((time - minutes - seconds)*100);
+            
+            self.uploadClock.text = [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
+        }
     }
     
     self.sentLabel.text = [NSString stringWithFormat:@"KB sent : %.0f", self.broadcastManager.currentStreamBytesSent/1000.f];
@@ -148,7 +168,7 @@
 - (void)tapToFocus:(UITapGestureRecognizer *)recognizer {
     if (recognizer.state == UIGestureRecognizerStateEnded) {
         CGPoint tapPoint = [recognizer locationInView:self.previewView];
-        [self.previewView showFocusAtPoint:tapPoint];
+        [[NHSBroadcastManager sharedManager] showFocusAreaAt:tapPoint withPreview:self.previewView];
     }
 }
 
@@ -159,9 +179,7 @@
         NSLog(@"Started streaming: Stream %@", stream);
         self.recButton.selected = YES;
         self.stream = stream;
-        
-        self.sentLabel.text = @"KB sent : 0";
-        
+
         self.uploadTimer = [NSTimer timerWithTimeInterval:.1f target:self selector:@selector(uploadTimerAction) userInfo:nil repeats:YES];
         [[NSRunLoop mainRunLoop] addTimer:self.uploadTimer forMode:NSDefaultRunLoopMode];
         
@@ -173,7 +191,7 @@
 }
 
 - (void)broadcastManager:(NHSBroadcastManager *)manager didCreatePreviewImageForStreamWithID:(NSString *)streamID image:(UIImage *)previewImage {
-    NSLog(@"Stream %@ preview image %.0fx%.0f", streamID, previewImage.size.width, previewImage.size.height);
+    NSLog(@"Stream %@ created preview image %.0fx%.0f", streamID, previewImage.size.width, previewImage.size.height);
 }
 
 - (void)broadcastManager:(NHSBroadcastManager *)manager didUpdateLocationForStreamWithID:(NSString *)streamID withCoordinate:(CLLocationCoordinate2D)coordinate {

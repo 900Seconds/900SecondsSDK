@@ -1,1 +1,0 @@
-../../../AWSiOSSDKv2/AWSCore/MobileAnalytics/include/session/AWSMobileAnalyticsSessionClient.h

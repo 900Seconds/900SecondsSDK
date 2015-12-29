@@ -1,20 +1,20 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "737FDC0FC385A64110586CE3D95165E865E849D9",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "33B0CBFB2E62EBC3D1967680CA1166E714CFFC3B",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "33B0CBFB2E62EBC3D1967680CA1166E714CFFC3B" : 0,
-    "737FDC0FC385A64110586CE3D95165E865E849D9" : 0
+    "880EB74B45CF488308DFB65177E88EDDC88C4EBC" : 0,
+    "33B0CBFB2E62EBC3D1967680CA1166E714CFFC3B" : 0
   },
-  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "79B9C29F-6C1D-4994-8028-B2928C435F17",
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4F69E255-9FD7-4F5B-9796-7E4826C1E138",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "33B0CBFB2E62EBC3D1967680CA1166E714CFFC3B" : "",
-    "737FDC0FC385A64110586CE3D95165E865E849D9" : "900Sec-lib"
+    "880EB74B45CF488308DFB65177E88EDDC88C4EBC" : "seconds-ios-2\/Submodules\/libextobjc\/",
+    "33B0CBFB2E62EBC3D1967680CA1166E714CFFC3B" : "seconds-ios-2\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Nine00SecondsSDKExample",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Nine00SecondsSDKExample\/Nine00SecondsSDKExample.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "900SecSDK\/Nine00SecondsSDKExample\/Nine00SecondsSDKExample.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "support.denivip.ru:seconds\/seconds-ios.git",
@@ -22,9 +22,9 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "33B0CBFB2E62EBC3D1967680CA1166E714CFFC3B"
     },
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:900Seconds\/900SecondsSDK.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jspahrsummers\/libextobjc.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "737FDC0FC385A64110586CE3D95165E865E849D9"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "880EB74B45CF488308DFB65177E88EDDC88C4EBC"
     }
   ]
 }

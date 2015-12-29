@@ -3,15 +3,14 @@
 //  NineHundredSeconds
 //
 //  Created by Nikolay Morev on 03.10.14.
-//  Copyright (c) 2014 900 Seconds Oy. All rights reserved.
+//  Copyright (c) 2014 DENIVIP Group. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "DVGStreamsDataController.h"
 
-@class DVGStreamsDataController;
-
-@interface DVGStreamSelectionViewController : UITableViewController
-
+@interface DVGStreamSelectionViewController : UITableViewController <DVGStreamsDataControllerDelegate>
 @property (nonatomic, strong) DVGStreamsDataController *dataController;
 
+- (void)streamsDataControllerDidUpdateStreams:(DVGStreamsDataController *)controller;
 @end

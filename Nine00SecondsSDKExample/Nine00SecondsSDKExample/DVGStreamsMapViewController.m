@@ -3,7 +3,7 @@
 //  NineHundredSeconds
 //
 //  Created by Nikolay Morev on 10.11.14.
-//  Copyright (c) 2014 900 Seconds Oy. All rights reserved.
+//  Copyright (c) 2014 DENIVIP Group. All rights reserved.
 //
 
 #import "DVGStreamsMapViewController.h"
@@ -17,7 +17,6 @@
 #import "DVGMKAnnotationUtilities.h"
 #import "DVGStreamSelectionViewController.h"
 #import "DVGStreamsDataController.h"
-#import "AFHTTPRequestOperation.h"
 
 @interface DVGStreamsMapViewController ()
 <MKMapViewDelegate,
@@ -32,7 +31,6 @@ CLLocationManagerDelegate>
 @property (copy, nonatomic) NSArray *visibleStreams;
 @property (nonatomic) NSInteger maxPopularity;
 @property (nonatomic) NSDate *maxAgeDate;
-@property (weak, nonatomic) AFHTTPRequestOperation *fetchRequestOperation;
 @property (nonatomic, strong) NHSStream *selectedStream;
 @property (nonatomic, strong) KPClusteringController *clusteringController;
 
@@ -46,16 +44,17 @@ CLLocationManagerDelegate>
 {
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     _locationManager.delegate = nil;
-    [_fetchRequestOperation cancel];
+    //[_fetchRequestOperation cancel];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    self.mapView.region = MKCoordinateRegionMake(self.initialCoordinates, MKCoordinateSpanMake(.5, .5));
+    // Initial location: Helsinki
+    self.mapView.region = MKCoordinateRegionMake(self.initialCoordinates, MKCoordinateSpanMake(0.5, 0.5));
     [self setNeedsToRefreshData];
-
+    self.title = @"Map";
     self.clusteringController = [[KPClusteringController alloc] initWithMapView:self.mapView];
 }
 
@@ -144,13 +143,15 @@ CLLocationManagerDelegate>
     // Don't refresh if player is visible or it will screw up streams list
     if (self.presentedViewController) return;
 
-    [self.fetchRequestOperation cancel];
+    //[self.fetchRequestOperation cancel];
 
     float radius = [self radiusFromCurrentSpan];
     @weakify(self);
-    self.fetchRequestOperation = [[NHSBroadcastManager sharedManager] fetchStreamsNearCoordinate:coordinate withRadius:radius untilDate:nil withCompletion:^(NSArray *streamsArray, NSInteger totalNumber, NSError *error) {
+    //self.fetchRequestOperation =
+    [[NHSBroadcastManager sharedManager] fetchStreamsNearCoordinate:coordinate withRadius:radius untilDate:nil withCompletion:^(NSDictionary* result, NSError *error) {
         @strongify(self);
-        if (streamsArray) {
+        NSArray* streamsArray = [result objectForKey:kNHSApiCompletionStreamsKey];
+        if (self && streamsArray) {
             self.streams = streamsArray;
         }
     }];
@@ -173,6 +174,7 @@ CLLocationManagerDelegate>
     [self.clusteringController setAnnotations:_streams];
     [self.mapView removeOverlays:self.mapView.overlays];
     [self.mapView addOverlays:_streams level:MKOverlayLevelAboveRoads];
+    self.title = [NSString stringWithFormat:@"Map (%ld)", [self.streams count]];
 }
 
 - (float)radiusFromCurrentSpan {
@@ -322,6 +324,12 @@ CLLocationManagerDelegate>
             self.selectedStreamCenter = [view.superview convertPoint:view.center toView:nil];
 //            [self performSegueWithIdentifier:@"Player" sender:self];
             [self showPlayerWithStream:self.selectedStream];
+            
+            [[NHSBroadcastManager sharedManager] viewersForStream:stream untilDate:nil withCompletion:^(NSDictionary* result, NSError *error) {
+                NSInteger totalNumberOfItems = [[result objectForKey:kNHSApiCompletionTotalsKey] integerValue];
+                NSArray* viewersArray = [result objectForKey:kNHSApiCompletionViewersKey];
+                NSLog(@"%@, %ld, %@", viewersArray, (unsigned long)totalNumberOfItems, error);
+            }];
         }
     }
 

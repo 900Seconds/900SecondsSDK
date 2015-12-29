@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "33B0CBFB2E62EBC3D1967680CA1166E714CFFC3B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "880EB74B45CF488308DFB65177E88EDDC88C4EBC" : 0,
+    "33B0CBFB2E62EBC3D1967680CA1166E714CFFC3B" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "836612F5-63FD-4A2F-80D9-E35CD9BAFDD9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "880EB74B45CF488308DFB65177E88EDDC88C4EBC" : "seconds-ios-2\/Submodules\/libextobjc\/",
+    "33B0CBFB2E62EBC3D1967680CA1166E714CFFC3B" : "seconds-ios-2\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Nine00SDKTester",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "900SecSDK\/Nine00SecondsSDKExample\/Nine00SDKTester.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "support.denivip.ru:seconds\/seconds-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "33B0CBFB2E62EBC3D1967680CA1166E714CFFC3B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jspahrsummers\/libextobjc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "880EB74B45CF488308DFB65177E88EDDC88C4EBC"
+    }
+  ]
+}

@@ -1,10 +1,11 @@
 # 900SecondsSDK
 Live Streaming Video SDK for iOS
 
-900Seconds SDK is a video streaming library made for easily add geolocated live streaming into your mobile app. It encapsulates the whole stack of video streaming-related tech involved in live streaming process such as handling device camera, encoding video chunks with ffmpeg, uploading them to your file storage. Also it has a backend that handles app authorization, stores streams objects and can be requested for fetching available streams.
+900Seconds SDK is a video streaming library made for easily add geolocated live streaming into your mobile app. It encapsulates the whole stack of video streaming-related tech involved in live streaming process such as handling device camera, processing video with filters and encoding video chunks with ffmpeg, uploading them to your file storage. Also it has a backend that handles app authorization, stores streams objects and can be requested for fetching available streams.
 
 Some of the features the SDK handles:
 - shooting the video with device camera
+- applying video effects (blur, pixelize, finger painting over video, etc) on the fly
 - compress video chunks and upload them to a file storage
 - fetching available streams around the geolocation
 - video streams playback
@@ -16,23 +17,36 @@ Some of the features the SDK handles:
 
 ### Installation and dependencies
 900Seconds SDK uses several third-party libraries in its work. In order to use it in your project you will need to add those libraries too.
-These are steps to set all required dependecies:
+These are steps to set all required dependencies:
 
-1. 900Seconds SDK requires following list of libraries
+1. 900Seconds SDK requires following list of libraries and frameworks
 
-    - [AFNetworking](https://github.com/AFNetworking/AFNetworking "Link to the project on GitHub")
-    - [AWSiOSSDKv2/S3  (v2.0.8)](https://github.com/aws/aws-sdk-ios "Link to the project on GitHub")
-    - [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack "Link to the project on GitHub")
-    - [THObserversAndBinders](https://github.com/th-in-gs/THObserversAndBinders "Link to the project on GitHub")
-    - [ffmpeg](https://github.com/FFmpeg/FFmpeg "Link to the project on GitHub") - only requires .a static libraries avcodec.a, avdevice.a, avformat.a, avutil.a
-    - [libextobjc](https://github.com/jspahrsummers/libextobjc "Link to the project on GitHub")
+    1) Required by [GPUImage](https://github.com/BradLarson/GPUImage "Link to the project on GitHub") (already linked with SDK)
+    - CoreMedia
+    - CoreVideo
+    - OpenGLES
+    - AVFoundation
+    - QuartzCore
 
-   Some of the listed libraries (like AWSiOSSDKv2/S3) have their own requirements that have to be set too. Alternatively you can add these listed dependencies using the CocoaPods. It will automatically add all required libraries and frameworks.
+    2) Required by [FFMPEG](https://github.com/FFmpeg/FFmpeg "Link to the project on GitHub") (only requires .a static libraries avcodec.a, avdevice.a, avformat.a, avutil.a)
+    - libavutil
+    - libavdevice
+    - libavformat
+    - libavcodec
+    - libz
 
-   If you want to be able to run you project on simulator then you also have to add iconv system library to it:
+    3) Required by uploading module
+    - AWSCore
+    - AWSS3
+    - libsqllite3
+
+    If you want to be able to run you project on simulator then you also have to add iconv system library to it:
     - libiconv.dylib
-   
-   Simply add it in project settings inside "Link Frameworks and Libraries" section.
+
+    Simply add it in project settings inside "Link Frameworks and Libraries" section.
+
+    - Since SDK connects to server via SSL, you should consider IOS 9 ATS limitations
+    See http://stackoverflow.com/questions/31231696/ios-9-ats-ssl-error-with-supporting-server
 
 2. To add 900Seconds SDK to the project you need to add
     - Nine00SecondsSDK.a library. It is compiled for both iPhone and iPhone Simulator architectures. So it can be used for both.
@@ -68,27 +82,43 @@ A completion in this method is optional, just to check there were no error. _NHS
 900Seconds SDK has all the AVFoundation camera-related and ffmpeg encoding logic inside already so you don't need to set anything at all. To start preview video feed from the camera just add `previewView` from _NHSBroadcastManager_ to your view hierarchy:
 
 ```objective-c
-[self.view addSubview:[[NHSBroadcastManager sharedInstance] previewView]];
+self.broadcastManager = [NHSBroadcastManager sharedManager];
+self.broadcastManager.qualityPreset = NHSStreamingQualityPreset640HighBitrate;
+self.broadcastManager.delegate = self;
+self.previewView = [self.broadcastManager createPreviewViewWithRect:self.view.bounds];
+[self.view addSubview:self.previewView];
 ```
+
 and call `startPreview`:
-
 ```objective-c
-[[NHSBroadcastManager sharedInstance] startPreview];
+[self.broadcastManager startPreview];
 ```
+You can change camera for recording with
+```objective-c
+[self.broadcastManager setupCameraInto:...];
+```
+
+Or set live filter to be applied to stream (and preview as well)
+```objective-c
+[self.broadcastManager setupCameraFilter:... withParams:...];
+```
+
 To start streaming you need just another one call:
-
 ```objective-c
-[[NHSBroadcastManager sharedInstance] startBroadcasting];
+[self.broadcastManager startBroadcasting];
 ```
+
 This call will create stream object on the backend and start writing and uploading video chunks to the file storage. Also it will start observing your location with CoreLocation as every stream in our SDK obliged to have a location. In order to keep user's privacy coordinates are taken with precision up to only 100 meters.
+
 Additionally you can implement _NHSBroadcastManagerDelegate_ methods to know if everything was successful or why something failed.
 
 To stop streaming and preview just call
 ```objective-c
-[[NHSBroadcastManager sharedInstance] stopBroadcasting];
-[[NHSBroadcastManager sharedInstance] stopPreview];
+[self.broadcastManager stopBroadcasting];
+[self.broadcastManager stopPreview:NO];
 ```
-All the preivew and broadcasting calls are asynchronous. Implement corresponding _NHSBroadcastManagerDelegate_ methods to know exactly when start/stop methods have finished.
+
+Most of preview and broadcasting calls are asynchronous. Implement corresponding _NHSBroadcastManagerDelegate_ methods to know exactly when start/stop methods have finished.
 
 #### Fetching live streams
 All the streams made by your application with the SDK can be fetched from backend as an array of _NHSStream_ objects. _NHSStream_ is a model object which contains information about stream such as it's ID, author ID, when it was started or stopped, how much it was watched through it's lifetime and so on.
@@ -96,32 +126,27 @@ All the streams made by your application with the SDK can be fetched from backen
 There are two main options for fetching streams.
 The first is to fetch streams with radius around some location point. To perform this fetch you should call
 ```objective-c
-[[NHSBroadcastManager sharedInstance] fetchStreamsNearCoordinate:(CLLocationCoordinate2D)coordinate 
-                                                      withRadius:(CGFloat)radiusInMeters 
-                                                       sinceDate:(NSDate *)date 
-                                                  withCompletion:(NHSBroadcastFetchCompletion)completion];
+[[NHSBroadcastManager sharedManager] fetchStreamsNearCoordinate:(CLLocationCoordinate2D)coordinate
+                                                      withRadius:(CGFloat)radiusInMeters
+                                                       sinceDate:(NSDate *)date
+                                                  withCompletion:(NHSBroadcastApiCallCompletion)completion];
 ```
 
-Fetch will request the backend for list of streams satisfying the parameters. When backend responds the completion will be called. Array of _NHSStream_ objects ordered by distance from coordinate are passed as _NSArray_ in the completion along with _NSError_ object. You can set _radius_ to 0 or _date_ to _nil_ to ignore those parameters, it will return all the streams made by this application.
+Fetch will request the backend for list of streams satisfying the parameters. When backend responds the completion will be called. Array of _NHSStream_ objects ordered by distance from coordinate are passed as _NSArray_ under key kNHSApiCompletionStreamsKey of the result, along with _NSError_ object. You can set _radius_ to 0 or _date_ to _nil_ to ignore those parameters, it will return all the streams made by this application.
 
 The second fetch option is to fetch last 30 streams made by specific author.
 ```objective-c
-[[NHSBroadcastManager sharedInstance] fetchRecentStreamsOfAuthorWithID:(NSString *)authorID
-                                                            completion:(NHSBroadcastFetchCompletion)completion];
+[[NHSBroadcastManager sharedManager] fetchStreamsOfAuthorWithID:(NSString *)authorID
+                                                       untilDate:(NSDate *)untilDate
+                                                      completion:(NHSBroadcastApiCallCompletion)completion];
 ```
 
 By default any _NHSStream_ object has authorID property set to some unique string generated on first app launch. So every stream has an identifier of an application on a particular device it was made with. Passing this identifier to this method will specify which user streams you want to fetch. If you pass _nil_ instead then backed will return last 30 streams made with this application regardless of author.
-
-To fetch streams made by current user you have to pass current application's authorID to this method. It can be obtained from _NSUserDefaults_ with the key _kNHSApplicationInstallationIdentifierKey_. Or you can use this convinience method instead:
-```objective-c
-[[NHSBroadcastManager sharedInstance] fetchRecentStreamsWithCompletion:(NHSBroadcastFetchCompletion)completion];
-```
-
-This method will return streams made by current application and has no input arguments except completion.
+To fetch streams made by current user you have to pass current application's authorID to this method.
 
 Also you can remove any particular stream by calling
 ```objective-c
-[[NHSBroadcastManager sharedInstance] removeStreamWithID:(NSString *)streamID 
+[[NHSBroadcastManager sharedManager] removeStreamWithID:(NSString *)streamID
                                               completion:(void ( ^ ) ( NSError *error ))completion];
 ```
 
@@ -129,20 +154,20 @@ Also you can remove any particular stream by calling
 To play any stream you can use either SDK player or any other player you want. There are some differences though.
 900Seconds SDK can evaluate the popularity of each stream. To make this happen the application must to notify the 900Seconds backend that someone started watching the stream. When the SDK player is used backend gets notified of when and where each particular stream was watched but if the stream is watched by any other player - you just watch the video and nothing else.
 
-The SDK player classes are _NHSStreamPlayerController_ and _NHSStreamPlayerViewController_. The first provides a _UIView_ with video feed to add to any view controller's view hierarchy. The second one is a _UIViewController_ itself with a view set to show the video. To use each of them you have to initialize it with _NHSStream_:
+The SDK player class is _NHSStreamPlayerController_. It provides a _UIView_ with video feed to add to any view controller's view hierarchy. To use it you have to initialize it with _NHSStream_:
 ```objective-c
-NHSStreamPlayerViewController *player = [[NHSStreamPlayerViewController alloc] initWithStream:(NHSStream *)stream];
-[self presentMoviePlayerViewControllerAnimated:player];
+NHSStreamPlayerController *player = [[NHSStreamPlayerController alloc] initWithStream:(NHSStream *)stream];
+[self.view addSubview:player.view];
 ```
 
-Player controllers are subclasses of _MPMoviePlayerController_ and _MPMoviePlayerViewController_ so you can get any standard MediaPlayer notifications via Notification Center.
+Player controller is subclass of _MPMoviePlayerController_ so you can use any standard MediaPlayer methods. To receive callbacks on stream play/stop/stall use NHSStreamPlayerController delegate _NHSStreamPlayerControllerDelegate_
 
 Alternatively you can play stream by yourself. In order to do this you need to obtain streaming URL from _NHSBroadcastManager_:
 ```objective-c
-NSURL *streamingURL = [[NHSBroadcastManager sharedInstance] broadcastingURLWithStream:(NHSStream *)stream];
+NSURL *streamingURL = [[NHSBroadcastManager sharedManager] broadcastingURLWithStream:(NHSStream *)stream];
 ```
 
 You can play this URL in _MPMoviePlayer_ or _AVPlayer_ or any other player. Just remember that it won't increase stream's popularity since backend won't be told of this playback.
 
 ## Requirements
-Besides including [listed](https://github.com/900Seconds/900SecondsSDK#installation-and-dependencies) third-party libraries your app have to be deployed at iOS 7 or higher with ARC.
+Besides including [listed](https://github.com/900Seconds/900SecondsSDK#installation-and-dependencies) third-party libraries your app have to be deployed at iOS 8 or higher with ARC.

@@ -3,7 +3,7 @@
 //  NineHundredSeconds
 //
 //  Created by Nikolay Morev on 10.11.14.
-//  Copyright (c) 2014 900 Seconds Oy. All rights reserved.
+//  Copyright (c) 2014 DENIVIP Group. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

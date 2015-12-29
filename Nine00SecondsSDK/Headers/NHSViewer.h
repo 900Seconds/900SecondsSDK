@@ -25,6 +25,16 @@
 @property (nonatomic, copy) NSString *viewerID;
 
 /**
+ Name of a user.
+ */
+@property (nonatomic, copy) NSString *username;
+
+/**
+ Avatar URL of a user.
+ */
+@property (nonatomic, copy) NSString *avatarUrl;
+
+/**
  This property shows how much viewers request watcher's app sent for this broadcast. In other words this can show how long user is watching this video.
  */
 @property (nonatomic) NSUInteger hits;
@@ -44,8 +54,15 @@
  */
 @property (nonatomic, copy) NSDate *updatedAt;
 
+
+/**
+ Raw parameters of viewer in dictionary form
+ */
+@property (nonatomic, copy) NSDictionary *viewerDictionary;
+
 /**
  Creates new instance with value that needs to be set.
+ Viewer instances with the same viewerID will be the same objects too.
  
  @param dictionary Key-value table of values to set.
  */

@@ -6,6 +6,33 @@
 //  Copyright (c) 2014 900 Seconds Oy. All rights reserved.
 //
 
+
+/**
+
+ Required Frameworks
+ 1) By GPUImage
+ - CoreMedia
+ - CoreVideo
+ - OpenGLES
+ - AVFoundation
+ - QuartzCore
+ 
+ 2) By FFMPEG
+ - libavutil
+ - libavdevice
+ - libavformat
+ - libavcodec
+ - libz
+
+ 3) By uploading module
+ - AWSCore
+ - AWSS3
+ - libsqllite3
+ 
+ SSL reqirements
+ See http://stackoverflow.com/questions/31231696/ios-9-ats-ssl-error-with-supporting-server
+*/
+
 #import <Foundation/Foundation.h>
 
 /**
@@ -35,7 +62,7 @@ extern NSString *const NHSApplicationStorageRegionKey;
 /**
  The application ID as it was registered on server.
  */
-@property (nonatomic, copy, readonly) NSString *applicationID;
+@property (nonatomic, copy, readonly) NSString *nhsApplicationID;
 
 /**
  Name of the application as it was registered on server.

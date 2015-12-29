@@ -3,7 +3,7 @@
 //  NineHundredSeconds
 //
 //  Created by Nikolay Morev on 12.11.14.
-//  Copyright (c) 2014 900 Seconds Oy. All rights reserved.
+//  Copyright (c) 2014 DENIVIP Group. All rights reserved.
 //
 
 #import "DVGStreamOverlayRenderer.h"
@@ -31,7 +31,7 @@
 #endif
 
     CGRect overlayRect = [self rectForMapRect:[self.overlay boundingMapRect]];
-//    CGContextAddEllipseInRect(context, overlayRect);
+// CGContextAddEllipseInRect(context, overlayRect);
 
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     NSArray *gradientColors = @[ (id)[[self class] fillColorWithIntensity:self.popularity].CGColor,

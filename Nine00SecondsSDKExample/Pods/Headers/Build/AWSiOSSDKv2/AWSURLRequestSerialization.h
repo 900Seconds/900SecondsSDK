@@ -1,1 +1,0 @@
-../../../AWSiOSSDKv2/AWSCore/Serialization/AWSURLRequestSerialization.h

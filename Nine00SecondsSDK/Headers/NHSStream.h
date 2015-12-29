@@ -7,12 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+
+extern NSString *const kNHSStreamTypeSelfie;
+extern NSString *const kNHSStreamTypeLandscape;
+
 @import CoreLocation;
 
 /**
  NHSStream class is a model to a broadcast. Normally developers don't need to create instances of this class themselves as SDK itself would create NHSStream object when broadcast manager starts broadcasting. Also the server side's response to a broadcasts requests will be parsed to an array of NHSStream objects.
  */
 @interface NHSStream : NSObject
+
+/**
+ Name of the broadcast.
+ */
+@property (nonatomic, copy) NSString *name;
 
 /**
  ID of the corresponding broadcast.
@@ -25,9 +34,9 @@
 @property (nonatomic, copy) NSString *authorID;
 
 /**
- Name of the broadcast.
+ User-defined type/tag of the broadcast, see kDVGStreamType* (example: "selfie,landsc,customflag")
  */
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *streamType;
 
 /**
  URL to stream preview image on file storage.
@@ -95,6 +104,7 @@
 
 /**
  Creates new NHSStream instance with dictionary of parameters that needs to be set.
+ Stream instances with the same streamID will be the same objects too.
  
  @param dictionary Key-value table of paramters to set.
  */
