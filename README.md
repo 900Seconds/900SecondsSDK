@@ -21,21 +21,21 @@ These are steps to set all required dependencies:
 
 1. 900Seconds SDK requires following list of libraries and frameworks
 
-    1) Required by [GPUImage](https://github.com/BradLarson/GPUImage "Link to the project on GitHub") (already linked with SDK)
+    1) Required by [GPUImage](https://github.com/BradLarson/GPUImage "Link to the project on GitHub"). GPUImage already linked with SDK, but its dependencies are not
     - CoreMedia
     - CoreVideo
     - OpenGLES
     - AVFoundation
     - QuartzCore
 
-    2) Required by [FFMPEG](https://github.com/FFmpeg/FFmpeg "Link to the project on GitHub") (only requires .a static libraries avcodec.a, avdevice.a, avformat.a, avutil.a)
+    2) Required by [FFMPEG](https://github.com/FFmpeg/FFmpeg "Link to the project on GitHub"). Only static libraries avcodec.a, avdevice.a, avformat.a, avutil.a are required
     - libavutil
     - libavdevice
     - libavformat
     - libavcodec
     - libz
 
-    3) Required by uploading module
+    3) Required for chunk uploading
     - AWSCore
     - AWSS3
     - libsqllite3
@@ -45,12 +45,28 @@ These are steps to set all required dependencies:
 
     Simply add it in project settings inside "Link Frameworks and Libraries" section.
 
-    - Since SDK connects to server via SSL, you should consider IOS 9 ATS limitations
-    See http://stackoverflow.com/questions/31231696/ios-9-ats-ssl-error-with-supporting-server
-
 2. To add 900Seconds SDK to the project you need to add
     - Nine00SecondsSDK.a library. It is compiled for both iPhone and iPhone Simulator architectures. So it can be used for both.
     - All NHS-prefixed header files which come with it
+    - Since SDK connects to server via SSL, you should consider IOS 9 ATS and add exceptions for *.livestreamsdk.com into your plist file
+    See http://stackoverflow.com/questions/31231696/ios-9-ats-ssl-error-with-supporting-server for details
+    ```objective-c
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>livestreamsdk.com</key>
+            <dict>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+                <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+                <key>NSTemporaryExceptionMinimumTLSVersion</key>
+                <string>TLSv1.1</string>
+            </dict>
+        </dict>
+    </dict>
+    ```
 
 3. To use the SDK classes you need to import 900Seconds SDK file:
 
@@ -98,7 +114,7 @@ You can change camera for recording with
 [self.broadcastManager setupCameraInto:...];
 ```
 
-Or set live filter to be applied to stream (and preview as well)
+Or set live filter to be applied over stream (both broadcast and preview)
 ```objective-c
 [self.broadcastManager setupCameraFilter:... withParams:...];
 ```
@@ -112,7 +128,7 @@ This call will create stream object on the backend and start writing and uploadi
 
 Additionally you can implement _NHSBroadcastManagerDelegate_ methods to know if everything was successful or why something failed.
 
-To stop streaming and preview just call
+To stop streaming and preview just call:
 ```objective-c
 [self.broadcastManager stopBroadcasting];
 [self.broadcastManager stopPreview:NO];
@@ -169,5 +185,5 @@ NSURL *streamingURL = [[NHSBroadcastManager sharedManager] broadcastingURLWithSt
 
 You can play this URL in _MPMoviePlayer_ or _AVPlayer_ or any other player. Just remember that it won't increase stream's popularity since backend won't be told of this playback.
 
-## Requirements
+## Other Requirements
 Besides including [listed](https://github.com/900Seconds/900SecondsSDK#installation-and-dependencies) third-party libraries your app have to be deployed at iOS 8 or higher with ARC.
