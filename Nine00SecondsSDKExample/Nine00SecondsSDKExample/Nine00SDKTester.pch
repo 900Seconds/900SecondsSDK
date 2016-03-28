@@ -14,9 +14,9 @@
 
 #ifdef __OBJC__
 
-#import "extobjc/EXTKeyPathCoding.h"
-#import "extobjc/EXTSelectorChecking.h"
-#import "extobjc/EXTScope.h"
+#import "EXTKeyPathCoding.h"
+#import "EXTSelectorChecking.h"
+#import "EXTScope.h"
 #import "CocoaLumberjack/DDLog.h"
 //#import "CocoaLumberjack/DDLogMacros.h"
 //#import "DVAssertionsAndLogging.h"

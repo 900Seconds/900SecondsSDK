@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30065C061C19A80000A0DA9D /* libNine00SecondsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30065C051C19A80000A0DA9D /* libNine00SecondsSDK.a */; };
+		3015E1C31CA92F4100984B16 /* libNine00SecondsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3015E1C21CA92F4100984B16 /* libNine00SecondsSDK.a */; };
+		3015E1D41CA92FA300984B16 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 3015E1D01CA92FA300984B16 /* EXTScope.m */; };
+		3015E1D51CA92FA300984B16 /* EXTSelectorChecking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3015E1D21CA92FA300984B16 /* EXTSelectorChecking.m */; };
+		3015E1D61CA9306000984B16 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3015E1C41CA92F6500984B16 /* libavcodec.a */; };
+		3015E1D71CA9306000984B16 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3015E1C51CA92F6500984B16 /* libavdevice.a */; };
+		3015E1D81CA9306000984B16 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3015E1C61CA92F6500984B16 /* libavformat.a */; };
+		3015E1D91CA9306000984B16 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3015E1C71CA92F6500984B16 /* libavutil.a */; };
 		306E7C5F1C32BB180039A3A0 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 306E7C5E1C32BB180039A3A0 /* lookup_amatorka.png */; };
 		30DB5A441C189AB800771FCD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB58051C184F8000771FCD /* OpenGLES.framework */; };
 		30DB5A451C189AC200771FCD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB58071C184F8A00771FCD /* AVFoundation.framework */; };
@@ -15,10 +21,8 @@
 		30DB5A471C189AD100771FCD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB58011C184F6B00771FCD /* CoreMedia.framework */; };
 		30DB5A4B1C189F9F00771FCD /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB5A481C189F9F00771FCD /* AWSCore.framework */; };
 		30DB5A4D1C189F9F00771FCD /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB5A491C189F9F00771FCD /* AWSS3.framework */; };
-		7422F6CB1AD81358002B1661 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E8D17D1A482E4300E646AB /* EXTScope.m */; };
 		7422F6D31AD81358002B1661 /* DVGStreamsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869351711A4D4D0A00FF8532 /* DVGStreamsMapViewController.m */; };
 		7422F6D41AD81358002B1661 /* DVGFeatureListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7422F6991AD8008F002B1661 /* DVGFeatureListTableViewController.m */; };
-		7422F6D51AD81358002B1661 /* EXTSelectorChecking.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E8D17F1A482E4300E646AB /* EXTSelectorChecking.m */; };
 		7422F6D71AD81358002B1661 /* DVGClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 869351691A4D4D0A00FF8532 /* DVGClusterAnnotationView.m */; };
 		7422F6DD1AD81358002B1661 /* DVGMKAnnotationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 869351781A4D4D5700FF8532 /* DVGMKAnnotationUtilities.m */; };
 		7422F6DE1AD81358002B1661 /* DVGStreamsMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8693516F1A4D4D0A00FF8532 /* DVGStreamsMapAnnotationView.m */; };
@@ -32,11 +36,7 @@
 		7422F6F21AD81358002B1661 /* DVGStreamsDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ACB7A21A4C6A9B00900C67 /* DVGStreamsDataController.m */; };
 		7422F6F31AD81358002B1661 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E8D1191A44401700E646AB /* main.m */; };
 		7422F6F81AD81358002B1661 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ACB79D1A4C21EF00900C67 /* CoreLocation.framework */; };
-		7422F6F91AD81358002B1661 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E8D1751A482E2700E646AB /* libavutil.a */; };
 		7422F6FA1AD81358002B1661 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25201B60F367C42A539AE687 /* libPods.a */; };
-		7422F6FB1AD81358002B1661 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E8D1731A482E2700E646AB /* libavdevice.a */; };
-		7422F6FC1AD81358002B1661 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E8D1741A482E2700E646AB /* libavformat.a */; };
-		7422F6FD1AD81358002B1661 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E8D1721A482E2700E646AB /* libavcodec.a */; };
 		7422F6FF1AD81358002B1661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E8D1211A44401700E646AB /* Main.storyboard */; };
 		7422F7001AD81358002B1661 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E8D1261A44401700E646AB /* LaunchScreen.xib */; };
 		7422F7011AD81358002B1661 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74E8D1241A44401700E646AB /* Images.xcassets */; };
@@ -44,20 +44,32 @@
 
 /* Begin PBXFileReference section */
 		25201B60F367C42A539AE687 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		30065C051C19A80000A0DA9D /* libNine00SecondsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNine00SecondsSDK.a; path = ../Nine00SecondsSDK/Product/libNine00SecondsSDK.a; sourceTree = "<group>"; };
+		3015E1BB1CA92F2E00984B16 /* NHSApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NHSApplication.h; path = ../Nine00SecondsSDK/Headers/NHSApplication.h; sourceTree = "<group>"; };
+		3015E1BC1CA92F2E00984B16 /* NHSBroadcastManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NHSBroadcastManager.h; path = ../Nine00SecondsSDK/Headers/NHSBroadcastManager.h; sourceTree = "<group>"; };
+		3015E1BD1CA92F2E00984B16 /* NHSStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NHSStream.h; path = ../Nine00SecondsSDK/Headers/NHSStream.h; sourceTree = "<group>"; };
+		3015E1BE1CA92F2E00984B16 /* NHSStreamPlayerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NHSStreamPlayerController.h; path = ../Nine00SecondsSDK/Headers/NHSStreamPlayerController.h; sourceTree = "<group>"; };
+		3015E1BF1CA92F2E00984B16 /* NHSViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NHSViewer.h; path = ../Nine00SecondsSDK/Headers/NHSViewer.h; sourceTree = "<group>"; };
+		3015E1C01CA92F2E00984B16 /* Nine00SecondsSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Nine00SecondsSDK.h; path = ../Nine00SecondsSDK/Headers/Nine00SecondsSDK.h; sourceTree = "<group>"; };
+		3015E1C11CA92F2E00984B16 /* NSDate+NHSUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSDate+NHSUtilities.h"; path = "../Nine00SecondsSDK/Headers/NSDate+NHSUtilities.h"; sourceTree = "<group>"; };
+		3015E1C21CA92F4100984B16 /* libNine00SecondsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNine00SecondsSDK.a; path = ../Nine00SecondsSDK/libNine00SecondsSDK.a; sourceTree = "<group>"; };
+		3015E1C41CA92F6500984B16 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = ../ThirdParties/FFmpeg.build/lib/libavcodec.a; sourceTree = "<group>"; };
+		3015E1C51CA92F6500984B16 /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = ../ThirdParties/FFmpeg.build/lib/libavdevice.a; sourceTree = "<group>"; };
+		3015E1C61CA92F6500984B16 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = ../ThirdParties/FFmpeg.build/lib/libavformat.a; sourceTree = "<group>"; };
+		3015E1C71CA92F6500984B16 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = ../ThirdParties/FFmpeg.build/lib/libavutil.a; sourceTree = "<group>"; };
+		3015E1CC1CA92FA300984B16 /* EXTKeyPathCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTKeyPathCoding.h; path = ../ThirdParties/libextobjc/extobjc/EXTKeyPathCoding.h; sourceTree = "<group>"; };
+		3015E1CD1CA92FA300984B16 /* extobjc_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = extobjc_Prefix.pch; path = ../ThirdParties/libextobjc/extobjc/extobjc_Prefix.pch; sourceTree = "<group>"; };
+		3015E1CE1CA92FA300984B16 /* extobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = extobjc.h; path = ../ThirdParties/libextobjc/extobjc/extobjc.h; sourceTree = "<group>"; };
+		3015E1CF1CA92FA300984B16 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTScope.h; path = ../ThirdParties/libextobjc/extobjc/EXTScope.h; sourceTree = "<group>"; };
+		3015E1D01CA92FA300984B16 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXTScope.m; path = ../ThirdParties/libextobjc/extobjc/EXTScope.m; sourceTree = "<group>"; };
+		3015E1D11CA92FA300984B16 /* EXTSelectorChecking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTSelectorChecking.h; path = ../ThirdParties/libextobjc/extobjc/EXTSelectorChecking.h; sourceTree = "<group>"; };
+		3015E1D21CA92FA300984B16 /* EXTSelectorChecking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXTSelectorChecking.m; path = ../ThirdParties/libextobjc/extobjc/EXTSelectorChecking.m; sourceTree = "<group>"; };
+		3015E1D31CA92FA300984B16 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = metamacros.h; path = ../ThirdParties/libextobjc/extobjc/metamacros.h; sourceTree = "<group>"; };
 		306E7C5E1C32BB180039A3A0 /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_amatorka.png; sourceTree = "<group>"; };
 		30DB58011C184F6B00771FCD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		30DB58031C184F7700771FCD /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		30DB58051C184F8000771FCD /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		30DB58071C184F8A00771FCD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		30DB58091C184F9300771FCD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		30DB5A361C1872BD00771FCD /* NHSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHSApplication.h; path = ../Nine00SecondsSDK/Nine00SecondsSDK/public/NHSApplication.h; sourceTree = "<group>"; };
-		30DB5A371C1872BD00771FCD /* NHSBroadcastManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHSBroadcastManager.h; path = ../Nine00SecondsSDK/Nine00SecondsSDK/public/NHSBroadcastManager.h; sourceTree = "<group>"; };
-		30DB5A381C1872BD00771FCD /* NHSStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHSStream.h; path = ../Nine00SecondsSDK/Nine00SecondsSDK/public/NHSStream.h; sourceTree = "<group>"; };
-		30DB5A391C1872BD00771FCD /* NHSStreamPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHSStreamPlayerController.h; path = ../Nine00SecondsSDK/Nine00SecondsSDK/public/NHSStreamPlayerController.h; sourceTree = "<group>"; };
-		30DB5A3B1C1872BD00771FCD /* NHSViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHSViewer.h; path = ../Nine00SecondsSDK/Nine00SecondsSDK/public/NHSViewer.h; sourceTree = "<group>"; };
-		30DB5A3C1C1872BD00771FCD /* Nine00SecondsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Nine00SecondsSDK.h; path = ../Nine00SecondsSDK/Nine00SecondsSDK/public/Nine00SecondsSDK.h; sourceTree = "<group>"; };
-		30DB5A3D1C1872BD00771FCD /* NSDate+NHSUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+NHSUtilities.h"; path = "../Nine00SecondsSDK/Nine00SecondsSDK/public/NSDate+NHSUtilities.h"; sourceTree = "<group>"; };
 		30DB5A481C189F9F00771FCD /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
 		30DB5A491C189F9F00771FCD /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
 		7422F6981AD8008F002B1661 /* DVGFeatureListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVGFeatureListTableViewController.h; sourceTree = "<group>"; };
@@ -76,18 +88,6 @@
 		74E8D1241A44401700E646AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		74E8D1271A44401700E646AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		74E8D16E1A482DC700E646AB /* Nine00SDKTester.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nine00SDKTester.pch; sourceTree = "<group>"; };
-		74E8D1721A482E2700E646AB /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = ../../Submodules/FFmpeg.build/lib/libavcodec.a; sourceTree = "<group>"; };
-		74E8D1731A482E2700E646AB /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = ../../Submodules/FFmpeg.build/lib/libavdevice.a; sourceTree = "<group>"; };
-		74E8D1741A482E2700E646AB /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = ../../Submodules/FFmpeg.build/lib/libavformat.a; sourceTree = "<group>"; };
-		74E8D1751A482E2700E646AB /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = ../../Submodules/FFmpeg.build/lib/libavutil.a; sourceTree = "<group>"; };
-		74E8D17A1A482E4300E646AB /* extobjc_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = extobjc_Prefix.pch; path = ../../Submodules/libextobjc/extobjc/extobjc_Prefix.pch; sourceTree = "<group>"; };
-		74E8D17B1A482E4300E646AB /* extobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = extobjc.h; path = ../../Submodules/libextobjc/extobjc/extobjc.h; sourceTree = "<group>"; };
-		74E8D17C1A482E4300E646AB /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTScope.h; path = ../../Submodules/libextobjc/extobjc/EXTScope.h; sourceTree = "<group>"; };
-		74E8D17D1A482E4300E646AB /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXTScope.m; path = ../../Submodules/libextobjc/extobjc/EXTScope.m; sourceTree = "<group>"; };
-		74E8D17E1A482E4300E646AB /* EXTSelectorChecking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTSelectorChecking.h; path = ../../Submodules/libextobjc/extobjc/EXTSelectorChecking.h; sourceTree = "<group>"; };
-		74E8D17F1A482E4300E646AB /* EXTSelectorChecking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXTSelectorChecking.m; path = ../../Submodules/libextobjc/extobjc/EXTSelectorChecking.m; sourceTree = "<group>"; };
-		74E8D1801A482E4300E646AB /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = metamacros.h; path = ../../Submodules/libextobjc/extobjc/metamacros.h; sourceTree = "<group>"; };
-		74E8D1831A482E5700E646AB /* EXTKeyPathCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTKeyPathCoding.h; path = ../../Submodules/libextobjc/extobjc/EXTKeyPathCoding.h; sourceTree = "<group>"; };
 		74E8D1971A4AECE500E646AB /* DVGCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVGCameraViewController.h; sourceTree = "<group>"; };
 		74E8D1981A4AECE500E646AB /* DVGCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVGCameraViewController.m; sourceTree = "<group>"; };
 		869351681A4D4D0A00FF8532 /* DVGClusterAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVGClusterAnnotationView.h; sourceTree = "<group>"; };
@@ -115,19 +115,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30065C061C19A80000A0DA9D /* libNine00SecondsSDK.a in Frameworks */,
+				3015E1D61CA9306000984B16 /* libavcodec.a in Frameworks */,
+				3015E1D71CA9306000984B16 /* libavdevice.a in Frameworks */,
+				3015E1D81CA9306000984B16 /* libavformat.a in Frameworks */,
+				3015E1D91CA9306000984B16 /* libavutil.a in Frameworks */,
 				30DB5A471C189AD100771FCD /* CoreMedia.framework in Frameworks */,
 				30DB5A461C189ACC00771FCD /* CoreVideo.framework in Frameworks */,
 				30DB5A451C189AC200771FCD /* AVFoundation.framework in Frameworks */,
 				30DB5A441C189AB800771FCD /* OpenGLES.framework in Frameworks */,
 				7422F6F81AD81358002B1661 /* CoreLocation.framework in Frameworks */,
 				30DB5A4B1C189F9F00771FCD /* AWSCore.framework in Frameworks */,
-				7422F6F91AD81358002B1661 /* libavutil.a in Frameworks */,
+				3015E1C31CA92F4100984B16 /* libNine00SecondsSDK.a in Frameworks */,
 				7422F6FA1AD81358002B1661 /* libPods.a in Frameworks */,
 				30DB5A4D1C189F9F00771FCD /* AWSS3.framework in Frameworks */,
-				7422F6FB1AD81358002B1661 /* libavdevice.a in Frameworks */,
-				7422F6FC1AD81358002B1661 /* libavformat.a in Frameworks */,
-				7422F6FD1AD81358002B1661 /* libavcodec.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,13 +201,13 @@
 		74E8D16F1A482DE300E646AB /* Nine00SecondsSDK */ = {
 			isa = PBXGroup;
 			children = (
-				30DB5A361C1872BD00771FCD /* NHSApplication.h */,
-				30DB5A371C1872BD00771FCD /* NHSBroadcastManager.h */,
-				30DB5A381C1872BD00771FCD /* NHSStream.h */,
-				30DB5A391C1872BD00771FCD /* NHSStreamPlayerController.h */,
-				30DB5A3B1C1872BD00771FCD /* NHSViewer.h */,
-				30DB5A3C1C1872BD00771FCD /* Nine00SecondsSDK.h */,
-				30DB5A3D1C1872BD00771FCD /* NSDate+NHSUtilities.h */,
+				3015E1BB1CA92F2E00984B16 /* NHSApplication.h */,
+				3015E1BC1CA92F2E00984B16 /* NHSBroadcastManager.h */,
+				3015E1BD1CA92F2E00984B16 /* NHSStream.h */,
+				3015E1BE1CA92F2E00984B16 /* NHSStreamPlayerController.h */,
+				3015E1BF1CA92F2E00984B16 /* NHSViewer.h */,
+				3015E1C01CA92F2E00984B16 /* Nine00SecondsSDK.h */,
+				3015E1C11CA92F2E00984B16 /* NSDate+NHSUtilities.h */,
 			);
 			name = Nine00SecondsSDK;
 			sourceTree = "<group>";
@@ -215,10 +215,10 @@
 		74E8D1701A482E0B00E646AB /* ffmpeg */ = {
 			isa = PBXGroup;
 			children = (
-				74E8D1721A482E2700E646AB /* libavcodec.a */,
-				74E8D1731A482E2700E646AB /* libavdevice.a */,
-				74E8D1741A482E2700E646AB /* libavformat.a */,
-				74E8D1751A482E2700E646AB /* libavutil.a */,
+				3015E1C41CA92F6500984B16 /* libavcodec.a */,
+				3015E1C51CA92F6500984B16 /* libavdevice.a */,
+				3015E1C61CA92F6500984B16 /* libavformat.a */,
+				3015E1C71CA92F6500984B16 /* libavutil.a */,
 			);
 			name = ffmpeg;
 			sourceTree = "<group>";
@@ -226,14 +226,14 @@
 		74E8D1711A482E0F00E646AB /* extobjc */ = {
 			isa = PBXGroup;
 			children = (
-				74E8D1831A482E5700E646AB /* EXTKeyPathCoding.h */,
-				74E8D17A1A482E4300E646AB /* extobjc_Prefix.pch */,
-				74E8D17B1A482E4300E646AB /* extobjc.h */,
-				74E8D17C1A482E4300E646AB /* EXTScope.h */,
-				74E8D17D1A482E4300E646AB /* EXTScope.m */,
-				74E8D17E1A482E4300E646AB /* EXTSelectorChecking.h */,
-				74E8D17F1A482E4300E646AB /* EXTSelectorChecking.m */,
-				74E8D1801A482E4300E646AB /* metamacros.h */,
+				3015E1CC1CA92FA300984B16 /* EXTKeyPathCoding.h */,
+				3015E1CD1CA92FA300984B16 /* extobjc_Prefix.pch */,
+				3015E1CE1CA92FA300984B16 /* extobjc.h */,
+				3015E1CF1CA92FA300984B16 /* EXTScope.h */,
+				3015E1D01CA92FA300984B16 /* EXTScope.m */,
+				3015E1D11CA92FA300984B16 /* EXTSelectorChecking.h */,
+				3015E1D21CA92FA300984B16 /* EXTSelectorChecking.m */,
+				3015E1D31CA92FA300984B16 /* metamacros.h */,
 			);
 			name = extobjc;
 			sourceTree = "<group>";
@@ -303,7 +303,7 @@
 		AC96C032B819A9FC346BEA46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				30065C051C19A80000A0DA9D /* libNine00SecondsSDK.a */,
+				3015E1C21CA92F4100984B16 /* libNine00SecondsSDK.a */,
 				30DB5A481C189F9F00771FCD /* AWSCore.framework */,
 				30DB5A491C189F9F00771FCD /* AWSS3.framework */,
 				30DB58091C184F9300771FCD /* QuartzCore.framework */,
@@ -439,15 +439,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7422F6CB1AD81358002B1661 /* EXTScope.m in Sources */,
 				7422F6D31AD81358002B1661 /* DVGStreamsMapViewController.m in Sources */,
 				7422F6D41AD81358002B1661 /* DVGFeatureListTableViewController.m in Sources */,
-				7422F6D51AD81358002B1661 /* EXTSelectorChecking.m in Sources */,
 				7422F6D71AD81358002B1661 /* DVGClusterAnnotationView.m in Sources */,
 				7422F6DD1AD81358002B1661 /* DVGMKAnnotationUtilities.m in Sources */,
 				7422F6DE1AD81358002B1661 /* DVGStreamsMapAnnotationView.m in Sources */,
+				3015E1D41CA92FA300984B16 /* EXTScope.m in Sources */,
 				7422F6DF1AD81358002B1661 /* DVGStreamSelectionViewController.m in Sources */,
 				7422F6E11AD81358002B1661 /* NHSViewer+MapKit.m in Sources */,
+				3015E1D51CA92FA300984B16 /* EXTSelectorChecking.m in Sources */,
 				7422F6E41AD81358002B1661 /* DVGCameraViewController.m in Sources */,
 				7422F6E71AD81358002B1661 /* DVGStreamAnnotationView.m in Sources */,
 				7422F6E81AD81358002B1661 /* NHSStream+MapKit.m in Sources */,
@@ -488,7 +488,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
-				FFMPEG_PATH = ../../Submodules/FFmpeg.build;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -518,8 +517,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					../Nine00SecondsSDK/Product,
-					../../Submodules/FFmpeg.build/lib,
+					"$(PROJECT_DIR)/../ThirdParties/FFmpeg.build/lib/**",
+					"$(PROJECT_DIR)/../Nine00SecondsSDK",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -547,7 +546,7 @@
 				);
 				PRODUCT_NAME = Nine00SDKTesterLibSource;
 				PROVISIONING_PROFILE = "";
-				USER_HEADER_SEARCH_PATHS = "$(FFMPEG_PATH)/include/$(CURRENT_ARCH) ../../Submodules/libextobjc ../../Submodules/FFmpeg";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -558,7 +557,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
-				FFMPEG_PATH = ../../Submodules/FFmpeg.build;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -584,8 +582,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					../Nine00SecondsSDK/Product,
-					../../Submodules/FFmpeg.build/lib,
+					"$(PROJECT_DIR)/../ThirdParties/FFmpeg.build/lib/**",
+					"$(PROJECT_DIR)/../Nine00SecondsSDK",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -613,7 +611,7 @@
 				);
 				PRODUCT_NAME = Nine00SDKTesterLibSource;
 				PROVISIONING_PROFILE = "";
-				USER_HEADER_SEARCH_PATHS = "$(FFMPEG_PATH)/include/$(CURRENT_ARCH) ../../Submodules/libextobjc ../../Submodules/FFmpeg";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
