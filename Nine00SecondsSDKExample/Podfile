@@ -1,4 +1,4 @@
-platform :ios, 8.0
-source 'https://github.com/CocoaPods/Specs.git'
-pod "CocoaLumberjack"
-pod "kingpin", :git => 'https://github.com/denivip/kingpin.git', :branch => 'denivip'
+target "Nine00SDKTesterSource" do
+  pod "CocoaLumberjack"
+  pod "kingpin", :git => 'https://github.com/denivip/kingpin.git', :branch => 'denivip'
+end
