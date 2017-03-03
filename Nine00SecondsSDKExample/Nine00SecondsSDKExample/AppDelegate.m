@@ -25,9 +25,7 @@
             NSLog(@"Auth Error : %@", error);
         }
     }];
-    
-    [[NHSBroadcastManager sharedManager] scheduleSavedUploads];
-    
+        
     return YES;
 }
 
