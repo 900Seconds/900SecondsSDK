@@ -53,5 +53,9 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>For testing purposes</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>For testing purposes</string>
 </dict>
 </plist>
